@@ -806,6 +806,14 @@ footer .footer-content {
   gap: 40px;
 }
 
+.card-btn-wrapper .card-btn-content{
+  gap: 30px;
+}
+
+.card-btn-wrapper .card-btn-content .btn-wrapper {
+  padding-inline: 15px;
+}
+
 }
 
 @media screen and (max-width : 1024px){
