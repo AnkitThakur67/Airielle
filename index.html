@@ -96,9 +96,9 @@
                             <div class="field-input">
                                 <select id="fromCity" name="fromCity">
                                 <option value="">Select Origin</option>
-                                <option value="NYC">New York (NYC)</option>
+                                <option value="Sydney, Australia">Sydney, Australia</option>
                                 <option value="LAX">Los Angeles (LAX)</option>
-                                <option value="LHR">London (LHR)</option>
+                                <option value="Brisbane, Australia">Brisbane, Australia</option>
                                 <option value="DXB">Dubai (DXB)</option>
                                 <option value="Cannes">Cannes</option>
                                 <option value="Mykonos">Mykonos</option>
@@ -124,8 +124,8 @@
                             <div class="field-input">
                                 <select id="toCity" name="toCity">
                                 <option value="">Select Destination</option>
-                                <option value="NYC">New York (NYC)</option>
                                 <option value="LAX">Los Angeles (LAX)</option>
+                                <option value="Brisbane, Australia">Brisbane, Australia</option>
                                 <option value="LHR">London (LHR)</option>
                                 <option value="DXB">Dubai (DXB)</option>
                                 <option value="Cannes">Cannes</option>
@@ -148,7 +148,7 @@
 
                             <!-- Departure -->
                             <div class="field">
-                            <label class="field-label" for="departDate">Departure</label>
+                            <label class="field-label hidden" for="departDate">Departure</label>
                             <div class="field-input">
                                 <input id="departDate" name="departDate" type="date" />
                                 <span class="calander-icon">
@@ -156,6 +156,7 @@
                                         <path d="M14.3145 0C14.7746 0.000122163 15.1475 0.372846 15.1475 0.833008V2.07422H17.4248C19.0305 2.07422 20.332 3.37577 20.332 4.98145V10.3457C20.6899 10.439 20.9539 10.7632 20.9541 11.1504C20.9541 11.5377 20.69 11.8617 20.332 11.9551V19.499C20.3319 21.1046 19.0304 22.4062 17.4248 22.4062H2.90723C1.30177 22.4061 0.000173126 21.1045 0 19.499V4.98145C0 3.37585 1.30166 2.07434 2.90723 2.07422H5.18555V0.833008C5.18555 0.372771 5.55832 0 6.01855 0C6.47865 0.000172096 6.85156 0.372877 6.85156 0.833008V2.07422H13.4814V0.833008C13.4814 0.372771 13.8542 0 14.3145 0ZM1.66602 11.9834V19.499C1.66619 20.184 2.22224 20.7401 2.90723 20.7402H17.4248C18.1099 20.7402 18.6658 20.1841 18.666 19.499V11.9834H1.66602ZM2.90723 3.74023C2.22213 3.74036 1.66602 4.29632 1.66602 4.98145V10.3174H18.666V4.98145C18.666 4.29625 18.11 3.74023 17.4248 3.74023H15.1475V4.98145C15.1472 5.44136 14.7744 5.81433 14.3145 5.81445C13.8544 5.81445 13.4817 5.44143 13.4814 4.98145V3.74023H6.85156V4.98145C6.85127 5.44133 6.47847 5.81428 6.01855 5.81445C5.5585 5.81445 5.18584 5.44143 5.18555 4.98145V3.74023H2.90723Z" fill="currentColor"/>
                                     </svg>
                                 </span>
+                                <span class="date-display" id="dateDisplay"></span>
                             </div>
                             <p class="error-message hidden"></p>
                             </div>
@@ -233,8 +234,8 @@
                                         </div>
                                         <div class="field_details">
                                             <span class="field-sub-heading">Date & Time</span>
-                                            <span class="field-date main-color field--heading">Feb 15, 2026</span>
-                                            <span class="field-time">10:00 AM</span>
+                                            <span class="field-date main-color field--heading">Feb 28, 2026</span>
+                                            <span class="field-time flight-time">10:00 AM</span>
                                         </div>
                                 </div>
                                 <div class="flight-details">
@@ -342,8 +343,8 @@
                                             </div>
                                             <div class="field_details">
                                                 <span class="field-sub-heading">Date & Time</span>
-                                                <span class="field-date main-color field--heading">Feb 15, 2026</span>
-                                                <span class="field-time">10:00 AM</span>
+                                                <span class="field-date main-color field--heading">Feb 28, 2026</span>
+                                                <span class="field-time flight-time">10:00 AM</span>
                                             </div>
                                     </div>
                                     <div class="flight-details">
@@ -469,8 +470,8 @@
                                         </div>
                                         <div class="field_details">
                                             <span class="field-sub-heading">Date & Time</span>
-                                            <span class="field-date main-color field--heading">Feb 15, 2026</span>
-                                            <span class="field-time">10:00 AM</span>
+                                            <span class="field-date main-color field--heading">Feb 28, 2026</span>
+                                            <span class="field-time flight-time">10:00 AM</span>
                                         </div>
                                 </div>
                                 <div class="flight-details">
@@ -577,8 +578,8 @@
                                         </div>
                                         <div class="field_details">
                                             <span class="field-sub-heading">Date & Time</span>
-                                            <span class="field-date main-color field--heading">Feb 15, 2026</span>
-                                            <span class="field-time">10:00 AM</span>
+                                            <span class="field-date main-color field--heading">Feb 28, 2026</span>
+                                            <span class="field-time flight-time">10:00 AM</span>
                                         </div>
                                 </div>
                                 <div class="flight-details">
@@ -685,8 +686,8 @@
                                         </div>
                                         <div class="field_details">
                                             <span class="field-sub-heading">Date & Time</span>
-                                            <span class="field-date main-color field--heading">Feb 15, 2026</span>
-                                            <span class="field-time">10:00 AM</span>
+                                            <span class="field-date main-color field--heading">Feb 28, 2026</span>
+                                            <span class="field-time flight-time">10:00 AM</span>
                                         </div>
                                 </div>
                                 <div class="flight-details">
@@ -794,8 +795,8 @@
                                         </div>
                                         <div class="field_details">
                                             <span class="field-sub-heading">Date & Time</span>
-                                            <span class="field-date main-color field--heading">Feb 15, 2026</span>
-                                            <span class="field-time">10:00 AM</span>
+                                            <span class="field-date main-color field--heading">Feb 28, 2026</span>
+                                            <span class="field-time flight-time">10:00 AM</span>
                                         </div>
                                 </div>
                                 <div class="flight-details">
@@ -902,8 +903,8 @@
                                         </div>
                                         <div class="field_details">
                                             <span class="field-sub-heading">Date & Time</span>
-                                            <span class="field-date main-color field--heading">Feb 15, 2026</span>
-                                            <span class="field-time">10:00 AM</span>
+                                            <span class="field-date main-color field--heading">Feb 28, 2026</span>
+                                            <span class="field-time flight-time">10:00 AM</span>
                                         </div>
                                 </div>
                                 <div class="flight-details">
@@ -1010,8 +1011,8 @@
                                         </div>
                                         <div class="field_details">
                                             <span class="field-sub-heading">Date & Time</span>
-                                            <span class="field-date main-color field--heading">Feb 15, 2026</span>
-                                            <span class="field-time">10:00 AM</span>
+                                            <span class="field-date main-color field--heading">Feb 28, 2026</span>
+                                            <span class="field-time flight-time ">10:00 AM</span>
                                         </div>
                                 </div>
                                 <div class="flight-details">

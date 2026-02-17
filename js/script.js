@@ -12,19 +12,19 @@ document.addEventListener("DOMContentLoaded", () => {
   const departDate = document.getElementById("departDate");
 
   const searchResultSection = document.getElementById("searchResultSection");
-  const reverseIcon = document.querySelector(".reverse-icon");
-
   const resultBox = document.getElementById("filteredResults");
   const sectionTitle = document.querySelector(".search-result-title");
+
+  const reverseIcon = document.querySelector(".reverse-icon");
+  const dateDisplay = document.getElementById("dateDisplay");
 
   const allFields = [nooftravels, traveltype, fromCity, toCity, departDate];
 
   // =========================
-  // LIVE ERROR CLEAR ON CHANGE
+  // LIVE ERROR CLEAR
   // =========================
   allFields.forEach(el => {
     if (!el) return;
-
     el.addEventListener("change", () => clearFieldError(el));
     el.addEventListener("input", () => clearFieldError(el));
   });
@@ -34,32 +34,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const field = inputEl.closest(".field");
     const msg = field?.querySelector(".error-message");
 
-    if (wrapper) wrapper.classList.remove("field-input--invalid");
-    if (msg) msg.textContent = "";
-  }
-
-  // =========================
-  // SELECT OPEN CLASS
-  // =========================
-  document.querySelectorAll(".field-input select").forEach(select => {
-    const wrap = select.closest(".field-input");
-
-    select.addEventListener("pointerdown", () => {
-      document.querySelectorAll(".field-input.open")
-        .forEach(w => w.classList.remove("open"));
-      wrap.classList.add("open");
-    });
-
-    select.addEventListener("change", () => wrap.classList.remove("open"));
-    select.addEventListener("blur", () => wrap.classList.remove("open"));
-  });
-
-  document.addEventListener("click", (e) => {
-    if (!e.target.closest(".field-input")) {
-      document.querySelectorAll(".field-input.open")
-        .forEach(w => w.classList.remove("open"));
+    wrapper?.classList.remove("field-input--invalid");
+    if (msg) {
+      msg.textContent = "";
+      msg.classList.add("hidden");
     }
-  });
+  }
 
   // =========================
   // DATE DEFAULT + MIN
@@ -71,23 +51,46 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // =========================
-  // SWAP FROM/TO
+  // DATE RANGE DISPLAY
   // =========================
-  if (reverseIcon) {
-    reverseIcon.addEventListener("click", () => {
-      const tmp = fromCity.value;
-      fromCity.value = toCity.value;
-      toCity.value = tmp;
-    });
+  function formatDateRange(isoDate) {
+    if (!isoDate) return "";
+
+    const start = new Date(isoDate);
+    const end = new Date(start);
+    end.setDate(start.getDate() + 9);
+
+    const opts = { weekday: "short", day: "numeric", month: "short" };
+
+    return `${start.toLocaleDateString("en-GB", opts)} - ${end.toLocaleDateString("en-GB", opts)}`;
   }
 
+  function updateDateDisplay() {
+    if (!dateDisplay || !departDate.value) return;
+    dateDisplay.textContent = formatDateRange(departDate.value);
+  }
+
+  departDate?.addEventListener("change", updateDateDisplay);
+  updateDateDisplay();
+
+  dateDisplay?.addEventListener("click", () => departDate.showPicker());
+
   // =========================
-  // RESULTS HEIGHT CONTROL
+  // SWAP FROM / TO
+  // =========================
+  reverseIcon?.addEventListener("click", () => {
+    const tmp = fromCity.value;
+    fromCity.value = toCity.value;
+    toCity.value = tmp;
+  });
+
+  // =========================
+  // RESULTS OPEN/CLOSE
   // =========================
   function openResults() {
     searchResultSection.classList.add("visible");
     searchResultSection.style.height =
-      searchResultSection.scrollHeight + "px";
+    searchResultSection.scrollHeight + "px";
 
     searchResultSection.addEventListener("transitionend", function handler() {
       searchResultSection.style.height = "auto";
@@ -109,25 +112,24 @@ document.addEventListener("DOMContentLoaded", () => {
   // =========================
   // FORM SUBMIT
   // =========================
-  form.addEventListener("submit", (event) => {
-    event.preventDefault();
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
     clearErrors();
 
-    let hasError = false;
+    let err = false;
 
-    if (!nooftravels.value) { setError(nooftravels, "Select travelers"); hasError = true; }
-    if (!traveltype.value) { setError(traveltype, "Select type"); hasError = true; }
-    if (!fromCity.value) { setError(fromCity, "Select origin"); hasError = true; }
-    if (!toCity.value) { setError(toCity, "Select destination"); hasError = true; }
+    if (!nooftravels.value) { setError(nooftravels, "Select travelers"); err = true; }
+    if (!traveltype.value) { setError(traveltype, "Select type"); err = true; }
+    if (!fromCity.value) { setError(fromCity, "Select origin"); err = true; }
+    if (!toCity.value) { setError(toCity, "Select destination"); err = true; }
+    if (!departDate.value) { setError(departDate, "Select date"); err = true; }
 
-    if (fromCity.value && toCity.value && fromCity.value === toCity.value) {
+    if (fromCity.value === toCity.value) {
       setError(toCity, "Origin & destination same");
-      hasError = true;
+      err = true;
     }
 
-    if (!departDate.value) { setError(departDate, "Select date"); hasError = true; }
-
-    if (hasError) {
+    if (err) {
       closeResults();
       return;
     }
@@ -139,19 +141,14 @@ document.addEventListener("DOMContentLoaded", () => {
   // FILTER ENGINE
   // =========================
   function runFilter() {
-    console.log("Cards found:", document.querySelectorAll("#allFlightCards .flight-card").length);
-    if (!resultBox) {
-        console.error("filteredResults container missing");
-      return;
-    }
 
     const cards = document.querySelectorAll("#allFlightCards .flight-card");
     resultBox.innerHTML = "";
 
-    // const range = getTravelerRange(nooftravels.value);
     const neededSeats = getMinTravelers(nooftravels.value);
-    const fromText = fromCity.options[fromCity.selectedIndex].text.split(" ")[0];
-    const toText = toCity.options[toCity.selectedIndex].text.split(" ")[0];
+
+    const fromText = fromCity.options[fromCity.selectedIndex].text.trim();
+    const toText = toCity.options[toCity.selectedIndex].text.trim();
 
     let matches = 0;
 
@@ -160,30 +157,30 @@ document.addEventListener("DOMContentLoaded", () => {
       const cardFrom = card.querySelector(".travel_from")?.textContent.trim();
       const cardTo = card.querySelector(".travel_to")?.textContent.trim();
       const seatsText = card.querySelector(".badge")?.textContent;
-      const cardDateText = card.querySelector(".field-date")?.textContent;
       const cardType = card.dataset.type;
 
+      const cardDateText = card.querySelector(".field-date")?.textContent;
+      const cardISO = textDateToISO(cardDateText);
+      const cardTimeText = card.querySelector(".flight-time")?.textContent?.trim();
       const seats = extractSeats(seatsText);
-      // const cardISO = convertToISO(cardDateText);
+
+      console.log("CARD:", cardFrom, cardTo, seats, cardISO);
 
       const match =
         seats >= neededSeats &&
-        cardFrom === fromText &&
-        cardTo === toText &&
-        cardType === traveltype.value;
-      console.log("COMPARE FROM:", cardFrom, fromText);
-      console.log("COMPARE TO:", cardTo, toText);
-      console.log("COMPARE TYPE:", cardType, traveltype.value);
-      console.log("SEATS:", seats, neededSeats );
+        cardFrom?.toLowerCase() === fromText.toLowerCase() &&
+        cardTo?.toLowerCase() === toText.toLowerCase() &&
+        cardType === traveltype.value &&
+        isDateAllowed(cardISO, cardTimeText, departDate.value, 9);
       if (match) {
         resultBox.appendChild(card.cloneNode(true));
         matches++;
       }
+
     });
-    console.log(`matches Results are:- ${matches}`)
 
     sectionTitle.textContent =
-      matches === 0 ? "No results found" : "Serach result";
+      matches === 0 ? "No results found" : "Search result";
 
     openResults();
 
@@ -196,12 +193,13 @@ document.addEventListener("DOMContentLoaded", () => {
   // =========================
   // HELPERS
   // =========================
+
   function setError(inputEl, message) {
     const field = inputEl.closest(".field");
     const wrapper = inputEl.closest(".field-input");
     const msg = field.querySelector(".error-message");
 
-    if (wrapper) wrapper.classList.add("field-input--invalid");
+    wrapper?.classList.add("field-input--invalid");
     if (msg) {
       msg.textContent = message;
       msg.classList.remove("hidden");
@@ -226,24 +224,48 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function getMinTravelers(val) {
     if (!val) return 0;
-
-    if (val.includes("-")) {
-      return parseInt(val.split("-")[0]); // use MIN only
-    }
-
-    if (val.includes("+")) {
-      return parseInt(val);
-    }
-
+    if (val.includes("-")) return parseInt(val.split("-")[0]);
+    if (val.includes("+")) return parseInt(val);
     return parseInt(val);
   }
 
-
-
-  function convertToISO(text) {
+  function textDateToISO(text) {
+    if (!text) return null;
+    text = text.replace("Date & Time", "").trim();
     const d = new Date(text);
     if (isNaN(d)) return null;
-    return d.toISOString().split("T")[0];
+    return d; // return DATE OBJECT (not string)
+  }
+
+  function isDateAllowed(cardDateObj, _cardTimeText, searchISO, rangeDays) {
+    if (!cardDateObj || !searchISO) return false;
+    const now = new Date();
+    const start = new Date(searchISO);
+    const end = new Date(searchISO);
+    end.setDate(end.getDate() + rangeDays);
+    // normalize date-only for window check
+    const cardDay = new Date(cardDateObj);
+    cardDay.setHours(0,0,0,0);
+    const startDay = new Date(start);
+    startDay.setHours(0,0,0,0);
+    const endDay = new Date(end);
+    endDay.setHours(0,0,0,0);
+    // ❌ outside window
+    if (cardDay < startDay || cardDay > endDay) {
+      console.log("OUTSIDE RANGE:", cardDateObj);
+      return false;
+    }
+    // check if search date is today
+    const today = new Date();
+    today.setHours(0,0,0,0);
+    if (startDay.getTime() === today.getTime()) {
+      // 🔴 TODAY → check time
+      console.log("TODAY CHECK:", cardDateObj, ">=", now);
+      return cardDateObj >= now;
+    }
+    // ✅ future date → allow (date match already done)
+    console.log("FUTURE DATE ALLOW:", cardDateObj);
+    return true;
   }
 
 });

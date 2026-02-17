@@ -1,22 +1,16 @@
 :root {
   --primary: #E01C9C;
-  --primary-dark: #d82276;
-  --accent: #16c35b;
-  --accent-dark: #0f8f41;
   --main-bg-color: #ffffff;
   --banner-main-color: #282828;
-  --bg-light: #f5f7fb;;
   --bg-card: #ffffff;
   --bg-footer: #101828;
   --color-footer: #99A1AF;
   --text-main: #0A0A0A;
   --text-muted: #4A5565;
   --border-soft: #E5E7EB;
-  --shadow-soft: 0 10px 30px rgba(15, 23, 42, 0.12);
   --banner-box-shadow-soft: 0px 25px 50px -12px #00000040;
   --radius-lg: 10px;
   --radius-md: 12px;
-  --radius-pill: 999px;
   --error: #e11d48;
   --body-family: "Roboto", sans-serif;
   --heading-family: "Philosopher", sans-serif;
@@ -86,7 +80,6 @@ img{
   max-width: 1480px;
   margin: 0 auto ;
   padding: 0 20px;
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08);
 }
 
 header {
@@ -108,13 +101,13 @@ header {
 nav {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 20px;
 }
 
 .nav-link {
   font-size: 14px;
   color: var(--text-muted);
-  padding: 9px 25px;
+  padding: 9px 24px;
   border-radius: 8px;
   cursor: pointer;
   border: 1px solid transparent;
@@ -126,6 +119,7 @@ nav {
   flex-wrap: wrap;
   align-items: center;
   gap: 10px;
+  letter-spacing: -0.15px;
 }
 
 .nav-link--outline {
@@ -148,7 +142,7 @@ nav {
 
 .hero {
   display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  grid-template-columns: 1fr 1fr;
   gap: 50px;
   align-items: stretch;
   padding-block: 60px;
@@ -222,6 +216,7 @@ nav {
   border: unset;
 }
 .search-form > .field .field-input select {
+  padding: 18px;
   padding-left: 52px;
   background: var(--select-tag-bg);
 }
@@ -233,6 +228,11 @@ nav {
   transform: translateY(-50%);
   pointer-events: none;
 }
+
+.field:has([for="toCity"]) .aeroplane-icon svg {
+  rotate: 180deg;
+}
+
 .field-wrapper .field-input {
   padding: 0;
   overflow: hidden;
@@ -242,6 +242,7 @@ nav {
 .field-input .icon {
   position: absolute;
   right: 15px;
+  padding-right: 5px;
 }
 
 .field-input.open .icon {
@@ -249,7 +250,7 @@ nav {
 }
 
 .field select {
-  padding: 15px;
+  padding: 14px;
   width: 100%;
   font-family: var(--body-family);
   border: unset;
@@ -267,7 +268,8 @@ nav {
   outline: none;
 }
 
-.field-input input {
+.field-input input,
+.field-input .date-display {
   border: none;
   background: transparent;
   width: 100%;
@@ -278,7 +280,7 @@ nav {
 }
 
 .field:has([for="departDate"]) .field-input {
-  padding: 15px;
+  padding: 18.5px;
   position: relative;
   padding-left: 48px;
 }
@@ -298,7 +300,10 @@ nav {
 /* remove native styling differences */
   appearance: none;
   -webkit-appearance: none;
-    -moz-appearance: none;
+  -moz-appearance: none;
+  position: absolute;
+  inset: 0;
+  opacity: 0;
 }
 
 input[type="date"]::-webkit-calendar-picker-indicator {
@@ -337,9 +342,11 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .error-message {
-  font-size: 11px;
   color: var(--error);
-  min-height: 14px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: normal;
+  letter-spacing: -0.31px;
 }
 
 .search-footer {
@@ -430,6 +437,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   line-height: 100%;
   letter-spacing: 0.07px;
   margin-bottom: 24px;
+  text-transform: capitalize;
 }
 .search-result-subtitle {
   font-size: 12px;
@@ -442,6 +450,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   justify-content: flex-start;
   gap: 50px;
   flex-wrap: wrap;
+  padding: 0 16px;
 }
 
 .search-result-cards .flight-card {
@@ -455,7 +464,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   background: var(--section-bg-color);
 }
 .section-box {
-  padding: 60px 0;
+  padding: 92px 16px 60px;
 }
 
 .section-header {
@@ -538,6 +547,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  padding-bottom: 18px;
 }
 
 .flight-card__body .flight-title {
@@ -700,7 +710,7 @@ footer {
 .footer-logo {
   display: block;
   width: 100%;
-  max-width: 300px;
+  max-width: 330px;
 }
 
 footer .footer-content {
@@ -814,6 +824,14 @@ footer .footer-content {
   padding-inline: 15px;
 }
 
+.search-result-cards{
+  padding-inline: 0;
+}
+
+.section-box{
+  padding-inline: 0;
+}
+
 }
 
 @media screen and (max-width : 1024px){
@@ -833,6 +851,7 @@ footer .footer-content {
   }
   .search-result-cards{
     gap: 40px;
+    padding-inline:0;
   }
   .search-result-cards .flight-card {
     max-width: calc(100% / 2 - (40px / 2));
@@ -855,6 +874,7 @@ footer .footer-content {
   .nav-wrapper button.nav-link.nav-link--outline {
     display: none;
   }
+
 
   .nav-wrapper .logo {
     max-width: 152px;
@@ -885,13 +905,28 @@ footer .footer-content {
   .field-wrapper {
     grid-template-columns: 1fr;
   }
-
+  .search-result-cards {
+    gap: 20px;
+  }
+  .search-result-cards .flight-card {
+    max-width: 100%;
+  }
+  .search-result-section.visible{
+    padding-top: 0;
+    padding-bottom: 50px;
+  }
   .section-box {
     padding: 50px 0;
   }
 
-  .section-title {
+  .section-title,
+  .search-result-title {
     font-size: 26px;
+    line-height: 32px;
+  }
+
+  .flight-card__image img{
+    aspect-ratio: 1.85 / 1;
   }
 
   .section-subtitle{
