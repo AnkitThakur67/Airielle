@@ -1,0 +1,1198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Airielle - Flight Booking</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css"/>
+    <script src="./js/script.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <a href="/index.html" title="Airielle - Flight Booking">
+                        <img src="./assets/Airlein Logo 1.png" alt="Airielle - Flight Booking">
+                    </a>
+                </div>
+                <nav>
+                    <button class="nav-link nav-link--outline" type="button">
+                        <span class="btn-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                <path d="M4.59996 12.0052C5.87234 12.6579 7.33602 12.8347 8.72722 12.5038C10.1184 12.1728 11.3457 11.3558 12.1878 10.2C13.0299 9.04426 13.4316 7.62571 13.3203 6.20001C13.2091 4.77432 12.5923 3.43522 11.5812 2.42404C10.57 1.41285 9.23088 0.796075 7.80519 0.684852C6.37949 0.573628 4.96094 0.975272 3.80517 1.81741C2.6494 2.65954 1.83242 3.88678 1.50144 5.27798C1.17046 6.66918 1.34725 8.13286 1.99996 9.40524L0.666626 13.3386L4.59996 12.0052Z" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </span>
+                        <span class="btn-text">Message Advisor</span></button>
+                    <button class="nav-link nav-link--solid" type="button">Get a Quote</button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+      <!-- HERO SECTION -->
+      <section class="hero-wrapper">
+        <div class="container">
+            <div class="hero">
+                <!-- Left: search card -->
+                <div class="hero-card">
+                    <form id="searchForm" novalidate>
+                        <h1 class="hero-title">The Sexy Way To Travel</h1>
+
+                        <div class="search-form">
+
+                            <!-- TOP OPTIONS -->
+                            <div class="field-wrapper">
+
+                            <!-- No. Of Traveler -->
+                            <div class="field">
+                                <label class="field-label" for="nooftravels">No. Of Traveler</label>
+                                <div class="field-input">
+                                    <select id="nooftravels" name="nooftravels">
+                                        <option value="">Select No. Of Traveler</option>
+                                        <option value="1-5">1–5 Travelers</option>
+                                        <option value="6-10">6–10 Travelers</option>
+                                        <option value="11-20">11–20 Travelers</option>
+                                        <option value="20+">20+ Travelers</option>
+                                    </select>
+                                    <span class="icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="10" viewBox="0 0 17 10" fill="none" style="">
+                                            <path d="M1 1L8.5 9L16 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </span>
+                                </div>
+                                <p class="error-message hidden"></p>
+                            </div>
+
+                            <!-- Travel Type -->
+                            <div class="field">
+                                <label class="field-label" for="traveltype">Travel Type</label>
+                                <div class="field-input">
+                                    <select id="traveltype" name="traveltype">
+                                        <option value="">Select Travel Type</option>
+                                        <option value="jet-sharing">Jet Sharing</option>
+                                        <option value="private-charter">Private Charter</option>
+                                        <option value="group-charter">Group Charter</option>
+                                        <option value="aircraft">Aircraft</option>
+                                    </select>
+                                    <span class="icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="10" viewBox="0 0 17 10" fill="none" style="">
+                                            <path d="M1 1L8.5 9L16 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </span>
+                                </div>
+                                <p class="error-message hidden"></p>
+                            </div>
+
+                            </div>
+
+                            <!-- Traveling From -->
+                            <div class="field">
+                            <label class="field-label" for="fromCity">Traveling From</label>
+                            <div class="field-input">
+                                <select id="fromCity" name="fromCity">
+                                <option value="">Select Origin</option>
+                                <option value="NYC">New York (NYC)</option>
+                                <option value="LAX">Los Angeles (LAX)</option>
+                                <option value="LHR">London (LHR)</option>
+                                <option value="DXB">Dubai (DXB)</option>
+                                <option value="Cannes">Cannes</option>
+                                <option value="Mykonos">Mykonos</option>
+                                </select>
+                                <span class="icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="17" height="10" viewBox="0 0 17 10" fill="none" style="">
+                                        <path d="M1 1L8.5 9L16 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </span>
+                                <span class="aeroplane-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                                        <path d="M17.1083 18.854L15.1289 9.83678L18.9777 5.98798C20.6272 4.3385 21.177 2.13919 20.6272 1.03953C19.5275 0.489701 17.3282 1.03953 15.6787 2.68901L11.8299 6.53781L2.81273 4.55843C2.2629 4.44846 1.82303 4.66839 1.6031 5.10826L1.27321 5.65809C1.05327 6.20791 1.16324 6.75774 1.6031 7.08764L7.43128 10.9364L5.23197 14.2354H1.933L0.833344 15.3351L4.13231 17.5344L6.33163 20.8333L7.43128 19.7337V16.4347L10.7303 14.2354L14.579 20.0636C14.9089 20.5034 15.4588 20.6134 16.0086 20.3935L16.5584 20.1735C16.9983 19.8437 17.2182 19.4038 17.1083 18.854Z" stroke="currentColor" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </span>
+                                <div class="reverse-icon hidden" title="Swap">⇄</div>
+                            </div>
+                            <p class="error-message hidden"></p>
+                            </div>
+
+                            <!-- Traveling To -->
+                            <div class="field">
+                            <label class="field-label" for="toCity">Traveling To</label>
+                            <div class="field-input">
+                                <select id="toCity" name="toCity">
+                                <option value="">Select Destination</option>
+                                <option value="NYC">New York (NYC)</option>
+                                <option value="LAX">Los Angeles (LAX)</option>
+                                <option value="LHR">London (LHR)</option>
+                                <option value="DXB">Dubai (DXB)</option>
+                                <option value="Cannes">Cannes</option>
+                                <option value="Mykonos">Mykonos</option>
+                                </select>
+                                <span class="icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="17" height="10" viewBox="0 0 17 10" fill="none" style="">
+                                        <path d="M1 1L8.5 9L16 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </span>
+                                <span class="aeroplane-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                                        <path d="M17.1083 18.854L15.1289 9.83678L18.9777 5.98798C20.6272 4.3385 21.177 2.13919 20.6272 1.03953C19.5275 0.489701 17.3282 1.03953 15.6787 2.68901L11.8299 6.53781L2.81273 4.55843C2.2629 4.44846 1.82303 4.66839 1.6031 5.10826L1.27321 5.65809C1.05327 6.20791 1.16324 6.75774 1.6031 7.08764L7.43128 10.9364L5.23197 14.2354H1.933L0.833344 15.3351L4.13231 17.5344L6.33163 20.8333L7.43128 19.7337V16.4347L10.7303 14.2354L14.579 20.0636C14.9089 20.5034 15.4588 20.6134 16.0086 20.3935L16.5584 20.1735C16.9983 19.8437 17.2182 19.4038 17.1083 18.854Z" stroke="currentColor" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </span>
+                            </div>
+                            <p class="error-message hidden"></p>
+                            </div>
+
+
+                            <!-- Departure -->
+                            <div class="field">
+                            <label class="field-label" for="departDate">Departure</label>
+                            <div class="field-input">
+                                <input id="departDate" name="departDate" type="date" />
+                                <span class="calander-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="21" height="23" viewBox="0 0 21 23" fill="none">
+                                        <path d="M14.3145 0C14.7746 0.000122163 15.1475 0.372846 15.1475 0.833008V2.07422H17.4248C19.0305 2.07422 20.332 3.37577 20.332 4.98145V10.3457C20.6899 10.439 20.9539 10.7632 20.9541 11.1504C20.9541 11.5377 20.69 11.8617 20.332 11.9551V19.499C20.3319 21.1046 19.0304 22.4062 17.4248 22.4062H2.90723C1.30177 22.4061 0.000173126 21.1045 0 19.499V4.98145C0 3.37585 1.30166 2.07434 2.90723 2.07422H5.18555V0.833008C5.18555 0.372771 5.55832 0 6.01855 0C6.47865 0.000172096 6.85156 0.372877 6.85156 0.833008V2.07422H13.4814V0.833008C13.4814 0.372771 13.8542 0 14.3145 0ZM1.66602 11.9834V19.499C1.66619 20.184 2.22224 20.7401 2.90723 20.7402H17.4248C18.1099 20.7402 18.6658 20.1841 18.666 19.499V11.9834H1.66602ZM2.90723 3.74023C2.22213 3.74036 1.66602 4.29632 1.66602 4.98145V10.3174H18.666V4.98145C18.666 4.29625 18.11 3.74023 17.4248 3.74023H15.1475V4.98145C15.1472 5.44136 14.7744 5.81433 14.3145 5.81445C13.8544 5.81445 13.4817 5.44143 13.4814 4.98145V3.74023H6.85156V4.98145C6.85127 5.44133 6.47847 5.81428 6.01855 5.81445C5.5585 5.81445 5.18584 5.44143 5.18555 4.98145V3.74023H2.90723Z" fill="currentColor"/>
+                                    </svg>
+                                </span>
+                            </div>
+                            <p class="error-message hidden"></p>
+                            </div>
+
+                        </div>
+
+                        <div class="search-footer">
+                            <button class="btn-primary" type="submit">Search Flights</button>
+                        </div>
+                    </form>
+                </div>
+                <!-- Right: hero image -->
+                <div class="hero-image-card">
+                    <div class="hero-image-inner mobile-hidden">
+                        <img
+                        src="./assets/Container.png"
+                        alt="Airplane over ocean"
+                        />
+                    </div>
+                    <div class="hero-image-inner desktop-hidden">
+                        <img
+                        src="./assets/mobile_banner_image.png"
+                        alt="Airplane over ocean"
+                        />
+                    </div>
+                </div>
+            </div>
+        </div>  
+      </section>
+
+      <!-- SEARCH RESULT SECTION (red box in your screenshot) -->
+      <section  class="search-result-section-wrapper">
+          <div class="container">
+            <div id="searchResultSection" class="search-result-section">
+                <h2 class="search-result-title">Search Result</h2>
+                <div class="search-result-subtitle hidden">
+                     Showing flights based on your search
+                </div>
+                <div class="search-result-cards" id="filteredResults">
+                  <!-- Card 1 -->
+                    <article class="flight-card">
+                        <div class="flight-card__image small">
+                            <img
+                            src="/assets/card_image.png"
+                            alt="Destination"
+                            />
+                            <div class="badge-wrapper">
+                                <span class="badge">3 seats left</span>
+                            </div>
+                        </div>
+                        <div class="flight-card__body">
+                            <h3 class="flight-title">
+                                <span class="travel_from">Cannes</span>
+                                <span class="flight-icon"><svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
+                                    <path d="M2.33334 13.1667L9.16668 11.6667L12.0833 14.5834C13.3333 15.8334 15 16.25 15.8333 15.8334C16.25 15 15.8333 13.3334 14.5833 12.0834L11.6667 9.16671L13.1667 2.33337C13.25 1.91671 13.0833 1.58337 12.75 1.41671L12.3333 1.16671C11.9167 1.00004 11.5 1.08337 11.25 1.41671L8.33334 5.83337L5.83334 4.16671V1.66671L5.00001 0.833374L3.33334 3.33337L0.833344 5.00004L1.66668 5.83337H4.16668L5.83334 8.33337L1.41668 11.25C1.08334 11.5 1.00001 11.9167 1.16668 12.3334L1.33334 12.75C1.58334 13.0834 1.91668 13.25 2.33334 13.1667Z" stroke="currentColor" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg></span>
+                                <span class="travel_to">Mykonos</span>
+                            </h3>
+                            <div class="flight-details-wrapper">
+                                <div class="flight-details">
+                                        <div class="icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                            <g clip-path="url(#clip0_9_993)">
+                                            <path d="M5.33333 1.33337V4.00004" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M10.6667 1.33337V4.00004" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M12.6667 2.66663H3.33333C2.59695 2.66663 2 3.26358 2 3.99996V13.3333C2 14.0697 2.59695 14.6666 3.33333 14.6666H12.6667C13.403 14.6666 14 14.0697 14 13.3333V3.99996C14 3.26358 13.403 2.66663 12.6667 2.66663Z" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M2 6.66663H14" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </g>
+                                            <defs>
+                                            <clipPath id="clip0_9_993">
+                                            <rect width="16" height="16" fill="white"/>
+                                            </clipPath>
+                                            </defs>
+                                            </svg>
+                                        </div>
+                                        <div class="field_details">
+                                            <span class="field-sub-heading">Date & Time</span>
+                                            <span class="field-date main-color field--heading">Feb 15, 2026</span>
+                                            <span class="field-time">10:00 AM</span>
+                                        </div>
+                                </div>
+                                <div class="flight-details">
+                                        <div class="icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                                <path d="M10.5333 11.5916L9.33332 6.12496L11.6667 3.79163C12.6667 2.79163 13 1.45829 12.6667 0.791626C12 0.458293 10.6667 0.791626 9.66666 1.79163L7.33332 4.12496L1.86666 2.92496C1.53332 2.85829 1.26666 2.99163 1.13332 3.25829L0.933323 3.59163C0.79999 3.92496 0.866657 4.25829 1.13332 4.45829L4.66666 6.79163L3.33332 8.79163H1.33332L0.666656 9.45829L2.66666 10.7916L3.99999 12.7916L4.66666 12.125V10.125L6.66666 8.79163L8.99999 12.325C9.19999 12.5916 9.53332 12.6583 9.86666 12.525L10.2 12.3916C10.4667 12.1916 10.6 11.925 10.5333 11.5916Z" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </div>
+                                        <div class="field_details">
+                                            <span class="field-sub-heading flight_type">Aircraft</span>
+                                            <span class="field-flight-name main-color field--heading">Gulfstream G650</span>
+                                        </div>
+                                </div>
+                                <div class="flight-details">
+                                        <div class="icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                                <g clip-path="url(#clip0_9_1014)">
+                                                <path d="M10.6667 13.3334V2.66671C10.6667 2.31309 10.5262 1.97395 10.2761 1.7239C10.0261 1.47385 9.68695 1.33337 9.33333 1.33337H6.66666C6.31304 1.33337 5.9739 1.47385 5.72385 1.7239C5.4738 1.97395 5.33333 2.31309 5.33333 2.66671V13.3334" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M13.3333 4H2.66666C1.93028 4 1.33333 4.59695 1.33333 5.33333V12C1.33333 12.7364 1.93028 13.3333 2.66666 13.3333H13.3333C14.0697 13.3333 14.6667 12.7364 14.6667 12V5.33333C14.6667 4.59695 14.0697 4 13.3333 4Z" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </g>
+                                                <defs>
+                                                <clipPath id="clip0_9_1014">
+                                                <rect width="16" height="16" fill="white"/>
+                                                </clipPath>
+                                                </defs>
+                                            </svg>
+                                        </div>
+                                        <div class="field_details">
+                                            <span class="field-sub-heading">Luggage</span>
+                                            <span class="field-luggage-max main-color field--heading">2 bags</span>
+                                        </div>
+                                </div>
+                                <div class="flight-details">
+                                        <div class="icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                                <path d="M10.6667 14V12.6667C10.6667 11.9594 10.3857 11.2811 9.88563 10.781C9.38553 10.281 8.70725 10 8.00001 10H4.00001C3.29277 10 2.61449 10.281 2.11439 10.781C1.6143 11.2811 1.33334 11.9594 1.33334 12.6667V14" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M6.00001 7.33333C7.47277 7.33333 8.66668 6.13943 8.66668 4.66667C8.66668 3.19391 7.47277 2 6.00001 2C4.52725 2 3.33334 3.19391 3.33334 4.66667C3.33334 6.13943 4.52725 7.33333 6.00001 7.33333Z" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M14.6667 14V12.6667C14.6662 12.0758 14.4696 11.5019 14.1076 11.0349C13.7456 10.5679 13.2387 10.2344 12.6667 10.0867" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M10.6667 2.08667C11.2403 2.23354 11.7487 2.56714 12.1117 3.03488C12.4748 3.50262 12.6719 4.07789 12.6719 4.67C12.6719 5.26212 12.4748 5.83739 12.1117 6.30513C11.7487 6.77287 11.2403 7.10647 10.6667 7.25334" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </div>
+                                        <div class="field_details">
+                                            <span class="field-sub-heading">Available</span>
+                                            <span class="field-luggage-max main-color field--heading">3 seats</span>
+                                        </div>
+                                </div>
+                            </div>
+                            <div class="flight-note-wrapper">
+                                <h4 class="flight-note">Notes</h4>
+                                <p class="flight-note_text">Champagne & caviar service included</p>
+                            </div>
+                            <div class="card-btn-wrapper">
+                                <div class="card-btn-content">
+                                    <div class="price-wrapper">
+                                        <span class="price_heading">Price per seat</span>
+                                        <span class="price">€12,500</span>
+                                    </div>
+                                    <a href="#" class="btn-wrapper">
+                                        <span class="btn-icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                                <path d="M4.60002 12.0053C5.87241 12.658 7.33608 12.8348 8.72728 12.5038C10.1185 12.1729 11.3457 11.3559 12.1879 10.2001C13.03 9.04434 13.4316 7.62579 13.3204 6.2001C13.2092 4.7744 12.5924 3.4353 11.5812 2.42412C10.57 1.41293 9.23095 0.796155 7.80525 0.684932C6.37955 0.573708 4.961 0.975352 3.80523 1.81749C2.64947 2.65962 1.83248 3.88686 1.5015 5.27806C1.17052 6.66926 1.34732 8.13294 2.00002 9.40532L0.666687 13.3387L4.60002 12.0053Z" stroke="currentColor     " stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </span>
+                                        <span class="btn_text">Instant Inquiry</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- Card 2 -->
+                    <article class="flight-card">
+                            <div class="flight-card__image small">
+                                <img
+                                src="/assets/card_image.png"
+                                alt="Destination"
+                                />
+                                <div class="badge-wrapper">
+                                    <span class="badge">3 seats left</span>
+                                </div>
+                            </div>
+                            <div class="flight-card__body">
+                                <h3 class="flight-title">
+                                    <span class="travel_from">Cannes</span>
+                                    <span class="flight-icon"><svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
+                                        <path d="M2.33334 13.1667L9.16668 11.6667L12.0833 14.5834C13.3333 15.8334 15 16.25 15.8333 15.8334C16.25 15 15.8333 13.3334 14.5833 12.0834L11.6667 9.16671L13.1667 2.33337C13.25 1.91671 13.0833 1.58337 12.75 1.41671L12.3333 1.16671C11.9167 1.00004 11.5 1.08337 11.25 1.41671L8.33334 5.83337L5.83334 4.16671V1.66671L5.00001 0.833374L3.33334 3.33337L0.833344 5.00004L1.66668 5.83337H4.16668L5.83334 8.33337L1.41668 11.25C1.08334 11.5 1.00001 11.9167 1.16668 12.3334L1.33334 12.75C1.58334 13.0834 1.91668 13.25 2.33334 13.1667Z" stroke="currentColor" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg></span>
+                                    <span class="travel_to">Mykonos</span>
+                                </h3>
+                                <div class="flight-details-wrapper">
+                                    <div class="flight-details">
+                                            <div class="icon">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                                <g clip-path="url(#clip0_9_993)">
+                                                <path d="M5.33333 1.33337V4.00004" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M10.6667 1.33337V4.00004" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M12.6667 2.66663H3.33333C2.59695 2.66663 2 3.26358 2 3.99996V13.3333C2 14.0697 2.59695 14.6666 3.33333 14.6666H12.6667C13.403 14.6666 14 14.0697 14 13.3333V3.99996C14 3.26358 13.403 2.66663 12.6667 2.66663Z" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M2 6.66663H14" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </g>
+                                                <defs>
+                                                <clipPath id="clip0_9_993">
+                                                <rect width="16" height="16" fill="white"/>
+                                                </clipPath>
+                                                </defs>
+                                                </svg>
+                                            </div>
+                                            <div class="field_details">
+                                                <span class="field-sub-heading">Date & Time</span>
+                                                <span class="field-date main-color field--heading">Feb 15, 2026</span>
+                                                <span class="field-time">10:00 AM</span>
+                                            </div>
+                                    </div>
+                                    <div class="flight-details">
+                                            <div class="icon">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                                    <path d="M10.5333 11.5916L9.33332 6.12496L11.6667 3.79163C12.6667 2.79163 13 1.45829 12.6667 0.791626C12 0.458293 10.6667 0.791626 9.66666 1.79163L7.33332 4.12496L1.86666 2.92496C1.53332 2.85829 1.26666 2.99163 1.13332 3.25829L0.933323 3.59163C0.79999 3.92496 0.866657 4.25829 1.13332 4.45829L4.66666 6.79163L3.33332 8.79163H1.33332L0.666656 9.45829L2.66666 10.7916L3.99999 12.7916L4.66666 12.125V10.125L6.66666 8.79163L8.99999 12.325C9.19999 12.5916 9.53332 12.6583 9.86666 12.525L10.2 12.3916C10.4667 12.1916 10.6 11.925 10.5333 11.5916Z" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </div>
+                                            <div class="field_details">
+                                                <span class="field-sub-heading flight_type">Aircraft</span>
+                                                <span class="field-flight-name main-color field--heading">Gulfstream G650</span>
+                                            </div>
+                                    </div>
+                                    <div class="flight-details">
+                                            <div class="icon">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                                    <g clip-path="url(#clip0_9_1014)">
+                                                    <path d="M10.6667 13.3334V2.66671C10.6667 2.31309 10.5262 1.97395 10.2761 1.7239C10.0261 1.47385 9.68695 1.33337 9.33333 1.33337H6.66666C6.31304 1.33337 5.9739 1.47385 5.72385 1.7239C5.4738 1.97395 5.33333 2.31309 5.33333 2.66671V13.3334" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path d="M13.3333 4H2.66666C1.93028 4 1.33333 4.59695 1.33333 5.33333V12C1.33333 12.7364 1.93028 13.3333 2.66666 13.3333H13.3333C14.0697 13.3333 14.6667 12.7364 14.6667 12V5.33333C14.6667 4.59695 14.0697 4 13.3333 4Z" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    </g>
+                                                    <defs>
+                                                    <clipPath id="clip0_9_1014">
+                                                    <rect width="16" height="16" fill="white"/>
+                                                    </clipPath>
+                                                    </defs>
+                                                </svg>
+                                            </div>
+                                            <div class="field_details">
+                                                <span class="field-sub-heading">Luggage</span>
+                                                <span class="field-luggage-max main-color field--heading">2 bags</span>
+                                            </div>
+                                    </div>
+                                    <div class="flight-details">
+                                            <div class="icon">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                                    <path d="M10.6667 14V12.6667C10.6667 11.9594 10.3857 11.2811 9.88563 10.781C9.38553 10.281 8.70725 10 8.00001 10H4.00001C3.29277 10 2.61449 10.281 2.11439 10.781C1.6143 11.2811 1.33334 11.9594 1.33334 12.6667V14" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path d="M6.00001 7.33333C7.47277 7.33333 8.66668 6.13943 8.66668 4.66667C8.66668 3.19391 7.47277 2 6.00001 2C4.52725 2 3.33334 3.19391 3.33334 4.66667C3.33334 6.13943 4.52725 7.33333 6.00001 7.33333Z" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path d="M14.6667 14V12.6667C14.6662 12.0758 14.4696 11.5019 14.1076 11.0349C13.7456 10.5679 13.2387 10.2344 12.6667 10.0867" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path d="M10.6667 2.08667C11.2403 2.23354 11.7487 2.56714 12.1117 3.03488C12.4748 3.50262 12.6719 4.07789 12.6719 4.67C12.6719 5.26212 12.4748 5.83739 12.1117 6.30513C11.7487 6.77287 11.2403 7.10647 10.6667 7.25334" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </div>
+                                            <div class="field_details">
+                                                <span class="field-sub-heading">Available</span>
+                                                <span class="field-luggage-max main-color field--heading">3 seats</span>
+                                            </div>
+                                    </div>
+                                </div>
+                                <div class="flight-note-wrapper">
+                                    <h4 class="flight-note">Notes</h4>
+                                    <p class="flight-note_text">Champagne & caviar service included</p>
+                                </div>
+                                <div class="card-btn-wrapper">
+                                    <div class="card-btn-content">
+                                        <div class="price-wrapper">
+                                            <span class="price_heading">Price per seat</span>
+                                            <span class="price">€12,500</span>
+                                        </div>
+                                        <a href="#" class="btn-wrapper">
+                                            <span class="btn-icon">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                                    <path d="M4.60002 12.0053C5.87241 12.658 7.33608 12.8348 8.72728 12.5038C10.1185 12.1729 11.3457 11.3559 12.1879 10.2001C13.03 9.04434 13.4316 7.62579 13.3204 6.2001C13.2092 4.7744 12.5924 3.4353 11.5812 2.42412C10.57 1.41293 9.23095 0.796155 7.80525 0.684932C6.37955 0.573708 4.961 0.975352 3.80523 1.81749C2.64947 2.65962 1.83248 3.88686 1.5015 5.27806C1.17052 6.66926 1.34732 8.13294 2.00002 9.40532L0.666687 13.3387L4.60002 12.0053Z" stroke="currentColor     " stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </span>
+                                            <span class="btn_text">Instant Inquiry</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+      </section>
+
+      <!-- AVAILABLE SEATS SECTION -->
+      <section class="section-box-wrapper">
+        <div class="container">
+            <div class="section-box">
+                <div class="section-header">
+                    <div class="section_header_wrapper">
+                    <h2 class="section-title">Available Flight Seats</h2>
+                    <p class="section-subtitle">Exclusive jet-share opportunities</p>
+                    </div>
+                </div>
+
+                <div class="cards-grid" id="allFlightCards">
+                    <!-- 6 cards, same style as screenshot -->
+                    <!-- Row 1 -->
+                    <div class="flight-card small"  data-type="jet-sharing" data-date="2026-02-17">
+                        <div class="flight-card__image small">
+                            <img
+                            src="/assets/card_image.png"
+                            alt="Destination"
+                            />
+                            <div class="badge-wrapper">
+                                <span class="badge">8 seats left</span>
+                            </div>
+                        </div>
+                        <div class="flight-card__body">
+                            <h3 class="flight-title">
+                                <span class="travel_from">Cannes</span>
+                                <span class="flight-icon"><svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
+                                    <path d="M2.33334 13.1667L9.16668 11.6667L12.0833 14.5834C13.3333 15.8334 15 16.25 15.8333 15.8334C16.25 15 15.8333 13.3334 14.5833 12.0834L11.6667 9.16671L13.1667 2.33337C13.25 1.91671 13.0833 1.58337 12.75 1.41671L12.3333 1.16671C11.9167 1.00004 11.5 1.08337 11.25 1.41671L8.33334 5.83337L5.83334 4.16671V1.66671L5.00001 0.833374L3.33334 3.33337L0.833344 5.00004L1.66668 5.83337H4.16668L5.83334 8.33337L1.41668 11.25C1.08334 11.5 1.00001 11.9167 1.16668 12.3334L1.33334 12.75C1.58334 13.0834 1.91668 13.25 2.33334 13.1667Z" stroke="currentColor" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg></span>
+                                <span class="travel_to">Mykonos</span>
+                            </h3>
+                            <div class="flight-details-wrapper">
+                                <div class="flight-details">
+                                        <div class="icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                            <g clip-path="url(#clip0_9_993)">
+                                            <path d="M5.33333 1.33337V4.00004" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M10.6667 1.33337V4.00004" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M12.6667 2.66663H3.33333C2.59695 2.66663 2 3.26358 2 3.99996V13.3333C2 14.0697 2.59695 14.6666 3.33333 14.6666H12.6667C13.403 14.6666 14 14.0697 14 13.3333V3.99996C14 3.26358 13.403 2.66663 12.6667 2.66663Z" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M2 6.66663H14" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </g>
+                                            <defs>
+                                            <clipPath id="clip0_9_993">
+                                            <rect width="16" height="16" fill="white"/>
+                                            </clipPath>
+                                            </defs>
+                                            </svg>
+                                        </div>
+                                        <div class="field_details">
+                                            <span class="field-sub-heading">Date & Time</span>
+                                            <span class="field-date main-color field--heading">Feb 15, 2026</span>
+                                            <span class="field-time">10:00 AM</span>
+                                        </div>
+                                </div>
+                                <div class="flight-details">
+                                        <div class="icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                                <path d="M10.5333 11.5916L9.33332 6.12496L11.6667 3.79163C12.6667 2.79163 13 1.45829 12.6667 0.791626C12 0.458293 10.6667 0.791626 9.66666 1.79163L7.33332 4.12496L1.86666 2.92496C1.53332 2.85829 1.26666 2.99163 1.13332 3.25829L0.933323 3.59163C0.79999 3.92496 0.866657 4.25829 1.13332 4.45829L4.66666 6.79163L3.33332 8.79163H1.33332L0.666656 9.45829L2.66666 10.7916L3.99999 12.7916L4.66666 12.125V10.125L6.66666 8.79163L8.99999 12.325C9.19999 12.5916 9.53332 12.6583 9.86666 12.525L10.2 12.3916C10.4667 12.1916 10.6 11.925 10.5333 11.5916Z" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </div>
+                                        <div class="field_details">
+                                            <span class="field-sub-heading flight_type">Aircraft</span>
+                                            <span class="field-flight-name main-color field--heading">Gulfstream G650</span>
+                                        </div>
+                                </div>
+                                <div class="flight-details">
+                                        <div class="icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                                <g clip-path="url(#clip0_9_1014)">
+                                                <path d="M10.6667 13.3334V2.66671C10.6667 2.31309 10.5262 1.97395 10.2761 1.7239C10.0261 1.47385 9.68695 1.33337 9.33333 1.33337H6.66666C6.31304 1.33337 5.9739 1.47385 5.72385 1.7239C5.4738 1.97395 5.33333 2.31309 5.33333 2.66671V13.3334" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M13.3333 4H2.66666C1.93028 4 1.33333 4.59695 1.33333 5.33333V12C1.33333 12.7364 1.93028 13.3333 2.66666 13.3333H13.3333C14.0697 13.3333 14.6667 12.7364 14.6667 12V5.33333C14.6667 4.59695 14.0697 4 13.3333 4Z" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </g>
+                                                <defs>
+                                                <clipPath id="clip0_9_1014">
+                                                <rect width="16" height="16" fill="white"/>
+                                                </clipPath>
+                                                </defs>
+                                            </svg>
+                                        </div>
+                                        <div class="field_details">
+                                            <span class="field-sub-heading">Luggage</span>
+                                            <span class="field-luggage-max main-color field--heading">2 bags</span>
+                                        </div>
+                                </div>
+                                <div class="flight-details">
+                                        <div class="icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                                <path d="M10.6667 14V12.6667C10.6667 11.9594 10.3857 11.2811 9.88563 10.781C9.38553 10.281 8.70725 10 8.00001 10H4.00001C3.29277 10 2.61449 10.281 2.11439 10.781C1.6143 11.2811 1.33334 11.9594 1.33334 12.6667V14" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M6.00001 7.33333C7.47277 7.33333 8.66668 6.13943 8.66668 4.66667C8.66668 3.19391 7.47277 2 6.00001 2C4.52725 2 3.33334 3.19391 3.33334 4.66667C3.33334 6.13943 4.52725 7.33333 6.00001 7.33333Z" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M14.6667 14V12.6667C14.6662 12.0758 14.4696 11.5019 14.1076 11.0349C13.7456 10.5679 13.2387 10.2344 12.6667 10.0867" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M10.6667 2.08667C11.2403 2.23354 11.7487 2.56714 12.1117 3.03488C12.4748 3.50262 12.6719 4.07789 12.6719 4.67C12.6719 5.26212 12.4748 5.83739 12.1117 6.30513C11.7487 6.77287 11.2403 7.10647 10.6667 7.25334" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </div>
+                                        <div class="field_details">
+                                            <span class="field-sub-heading">Available</span>
+                                            <span class="field-luggage-max main-color field--heading">3 seats</span>
+                                        </div>
+                                </div>
+                            </div>
+                            <div class="flight-note-wrapper">
+                                <h4 class="flight-note">Notes</h4>
+                                <p class="flight-note_text">Champagne & caviar service included</p>
+                            </div>
+                            <div class="card-btn-wrapper">
+                                <div class="card-btn-content">
+                                    <div class="price-wrapper">
+                                        <span class="price_heading">Price per seat</span>
+                                        <span class="price">€12,500</span>
+                                    </div>
+                                    <a href="#" class="btn-wrapper">
+                                        <span class="btn-icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                                <path d="M4.60002 12.0053C5.87241 12.658 7.33608 12.8348 8.72728 12.5038C10.1185 12.1729 11.3457 11.3559 12.1879 10.2001C13.03 9.04434 13.4316 7.62579 13.3204 6.2001C13.2092 4.7744 12.5924 3.4353 11.5812 2.42412C10.57 1.41293 9.23095 0.796155 7.80525 0.684932C6.37955 0.573708 4.961 0.975352 3.80523 1.81749C2.64947 2.65962 1.83248 3.88686 1.5015 5.27806C1.17052 6.66926 1.34732 8.13294 2.00002 9.40532L0.666687 13.3387L4.60002 12.0053Z" stroke="currentColor     " stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </span>
+                                        <span class="btn_text">Instant Inquiry</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flight-card small"  data-type="jet-sharing">
+                        <div class="flight-card__image small">
+                            <img
+                            src="/assets/card_image.png"
+                            alt="Destination"
+                            />
+                            <div class="badge-wrapper">
+                                <span class="badge">3 seats left</span>
+                            </div>
+                        </div>
+                        <div class="flight-card__body">
+                            <h3 class="flight-title">
+                                <span class="travel_from">Mykonos</span>
+                                <span class="flight-icon"><svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
+                                    <path d="M2.33334 13.1667L9.16668 11.6667L12.0833 14.5834C13.3333 15.8334 15 16.25 15.8333 15.8334C16.25 15 15.8333 13.3334 14.5833 12.0834L11.6667 9.16671L13.1667 2.33337C13.25 1.91671 13.0833 1.58337 12.75 1.41671L12.3333 1.16671C11.9167 1.00004 11.5 1.08337 11.25 1.41671L8.33334 5.83337L5.83334 4.16671V1.66671L5.00001 0.833374L3.33334 3.33337L0.833344 5.00004L1.66668 5.83337H4.16668L5.83334 8.33337L1.41668 11.25C1.08334 11.5 1.00001 11.9167 1.16668 12.3334L1.33334 12.75C1.58334 13.0834 1.91668 13.25 2.33334 13.1667Z" stroke="currentColor" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg></span>
+                                <span class="travel_to">Cannes</span>
+                            </h3>
+                            <div class="flight-details-wrapper">
+                                <div class="flight-details">
+                                        <div class="icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                            <g clip-path="url(#clip0_9_993)">
+                                            <path d="M5.33333 1.33337V4.00004" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M10.6667 1.33337V4.00004" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M12.6667 2.66663H3.33333C2.59695 2.66663 2 3.26358 2 3.99996V13.3333C2 14.0697 2.59695 14.6666 3.33333 14.6666H12.6667C13.403 14.6666 14 14.0697 14 13.3333V3.99996C14 3.26358 13.403 2.66663 12.6667 2.66663Z" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M2 6.66663H14" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </g>
+                                            <defs>
+                                            <clipPath id="clip0_9_993">
+                                            <rect width="16" height="16" fill="white"/>
+                                            </clipPath>
+                                            </defs>
+                                            </svg>
+                                        </div>
+                                        <div class="field_details">
+                                            <span class="field-sub-heading">Date & Time</span>
+                                            <span class="field-date main-color field--heading">Feb 15, 2026</span>
+                                            <span class="field-time">10:00 AM</span>
+                                        </div>
+                                </div>
+                                <div class="flight-details">
+                                        <div class="icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                                <path d="M10.5333 11.5916L9.33332 6.12496L11.6667 3.79163C12.6667 2.79163 13 1.45829 12.6667 0.791626C12 0.458293 10.6667 0.791626 9.66666 1.79163L7.33332 4.12496L1.86666 2.92496C1.53332 2.85829 1.26666 2.99163 1.13332 3.25829L0.933323 3.59163C0.79999 3.92496 0.866657 4.25829 1.13332 4.45829L4.66666 6.79163L3.33332 8.79163H1.33332L0.666656 9.45829L2.66666 10.7916L3.99999 12.7916L4.66666 12.125V10.125L6.66666 8.79163L8.99999 12.325C9.19999 12.5916 9.53332 12.6583 9.86666 12.525L10.2 12.3916C10.4667 12.1916 10.6 11.925 10.5333 11.5916Z" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </div>
+                                        <div class="field_details">
+                                            <span class="field-sub-heading flight_type">Aircraft</span>
+                                            <span class="field-flight-name main-color field--heading">Gulfstream G650</span>
+                                        </div>
+                                </div>
+                                <div class="flight-details">
+                                        <div class="icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                                <g clip-path="url(#clip0_9_1014)">
+                                                <path d="M10.6667 13.3334V2.66671C10.6667 2.31309 10.5262 1.97395 10.2761 1.7239C10.0261 1.47385 9.68695 1.33337 9.33333 1.33337H6.66666C6.31304 1.33337 5.9739 1.47385 5.72385 1.7239C5.4738 1.97395 5.33333 2.31309 5.33333 2.66671V13.3334" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M13.3333 4H2.66666C1.93028 4 1.33333 4.59695 1.33333 5.33333V12C1.33333 12.7364 1.93028 13.3333 2.66666 13.3333H13.3333C14.0697 13.3333 14.6667 12.7364 14.6667 12V5.33333C14.6667 4.59695 14.0697 4 13.3333 4Z" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </g>
+                                                <defs>
+                                                <clipPath id="clip0_9_1014">
+                                                <rect width="16" height="16" fill="white"/>
+                                                </clipPath>
+                                                </defs>
+                                            </svg>
+                                        </div>
+                                        <div class="field_details">
+                                            <span class="field-sub-heading">Luggage</span>
+                                            <span class="field-luggage-max main-color field--heading">2 bags</span>
+                                        </div>
+                                </div>
+                                <div class="flight-details">
+                                        <div class="icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                                <path d="M10.6667 14V12.6667C10.6667 11.9594 10.3857 11.2811 9.88563 10.781C9.38553 10.281 8.70725 10 8.00001 10H4.00001C3.29277 10 2.61449 10.281 2.11439 10.781C1.6143 11.2811 1.33334 11.9594 1.33334 12.6667V14" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M6.00001 7.33333C7.47277 7.33333 8.66668 6.13943 8.66668 4.66667C8.66668 3.19391 7.47277 2 6.00001 2C4.52725 2 3.33334 3.19391 3.33334 4.66667C3.33334 6.13943 4.52725 7.33333 6.00001 7.33333Z" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M14.6667 14V12.6667C14.6662 12.0758 14.4696 11.5019 14.1076 11.0349C13.7456 10.5679 13.2387 10.2344 12.6667 10.0867" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M10.6667 2.08667C11.2403 2.23354 11.7487 2.56714 12.1117 3.03488C12.4748 3.50262 12.6719 4.07789 12.6719 4.67C12.6719 5.26212 12.4748 5.83739 12.1117 6.30513C11.7487 6.77287 11.2403 7.10647 10.6667 7.25334" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </div>
+                                        <div class="field_details">
+                                            <span class="field-sub-heading">Available</span>
+                                            <span class="field-luggage-max main-color field--heading">3 seats</span>
+                                        </div>
+                                </div>
+                            </div>
+                            <div class="flight-note-wrapper">
+                                <h4 class="flight-note">Notes</h4>
+                                <p class="flight-note_text">Champagne & caviar service included</p>
+                            </div>
+                            <div class="card-btn-wrapper">
+                                <div class="card-btn-content">
+                                    <div class="price-wrapper">
+                                        <span class="price_heading">Price per seat</span>
+                                        <span class="price">€13,500</span>
+                                    </div>
+                                    <a href="#" class="btn-wrapper">
+                                        <span class="btn-icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                                <path d="M4.60002 12.0053C5.87241 12.658 7.33608 12.8348 8.72728 12.5038C10.1185 12.1729 11.3457 11.3559 12.1879 10.2001C13.03 9.04434 13.4316 7.62579 13.3204 6.2001C13.2092 4.7744 12.5924 3.4353 11.5812 2.42412C10.57 1.41293 9.23095 0.796155 7.80525 0.684932C6.37955 0.573708 4.961 0.975352 3.80523 1.81749C2.64947 2.65962 1.83248 3.88686 1.5015 5.27806C1.17052 6.66926 1.34732 8.13294 2.00002 9.40532L0.666687 13.3387L4.60002 12.0053Z" stroke="currentColor     " stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </span>
+                                        <span class="btn_text">Instant Inquiry</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flight-card small"  data-type="jet-sharing">
+                        <div class="flight-card__image small">
+                            <img
+                            src="/assets/card_image.png"
+                            alt="Destination"
+                            />
+                            <div class="badge-wrapper">
+                                <span class="badge">3 seats left</span>
+                            </div>
+                        </div>
+                        <div class="flight-card__body">
+                            <h3 class="flight-title">
+                                <span class="travel_from">Cannes</span>
+                                <span class="flight-icon"><svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
+                                    <path d="M2.33334 13.1667L9.16668 11.6667L12.0833 14.5834C13.3333 15.8334 15 16.25 15.8333 15.8334C16.25 15 15.8333 13.3334 14.5833 12.0834L11.6667 9.16671L13.1667 2.33337C13.25 1.91671 13.0833 1.58337 12.75 1.41671L12.3333 1.16671C11.9167 1.00004 11.5 1.08337 11.25 1.41671L8.33334 5.83337L5.83334 4.16671V1.66671L5.00001 0.833374L3.33334 3.33337L0.833344 5.00004L1.66668 5.83337H4.16668L5.83334 8.33337L1.41668 11.25C1.08334 11.5 1.00001 11.9167 1.16668 12.3334L1.33334 12.75C1.58334 13.0834 1.91668 13.25 2.33334 13.1667Z" stroke="currentColor" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg></span>
+                                <span class="travel_to">Mykonos</span>
+                            </h3>
+                            <div class="flight-details-wrapper">
+                                <div class="flight-details">
+                                        <div class="icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                            <g clip-path="url(#clip0_9_993)">
+                                            <path d="M5.33333 1.33337V4.00004" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M10.6667 1.33337V4.00004" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M12.6667 2.66663H3.33333C2.59695 2.66663 2 3.26358 2 3.99996V13.3333C2 14.0697 2.59695 14.6666 3.33333 14.6666H12.6667C13.403 14.6666 14 14.0697 14 13.3333V3.99996C14 3.26358 13.403 2.66663 12.6667 2.66663Z" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M2 6.66663H14" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </g>
+                                            <defs>
+                                            <clipPath id="clip0_9_993">
+                                            <rect width="16" height="16" fill="white"/>
+                                            </clipPath>
+                                            </defs>
+                                            </svg>
+                                        </div>
+                                        <div class="field_details">
+                                            <span class="field-sub-heading">Date & Time</span>
+                                            <span class="field-date main-color field--heading">Feb 15, 2026</span>
+                                            <span class="field-time">10:00 AM</span>
+                                        </div>
+                                </div>
+                                <div class="flight-details">
+                                        <div class="icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                                <path d="M10.5333 11.5916L9.33332 6.12496L11.6667 3.79163C12.6667 2.79163 13 1.45829 12.6667 0.791626C12 0.458293 10.6667 0.791626 9.66666 1.79163L7.33332 4.12496L1.86666 2.92496C1.53332 2.85829 1.26666 2.99163 1.13332 3.25829L0.933323 3.59163C0.79999 3.92496 0.866657 4.25829 1.13332 4.45829L4.66666 6.79163L3.33332 8.79163H1.33332L0.666656 9.45829L2.66666 10.7916L3.99999 12.7916L4.66666 12.125V10.125L6.66666 8.79163L8.99999 12.325C9.19999 12.5916 9.53332 12.6583 9.86666 12.525L10.2 12.3916C10.4667 12.1916 10.6 11.925 10.5333 11.5916Z" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </div>
+                                        <div class="field_details">
+                                            <span class="field-sub-heading flight_type">Aircraft</span>
+                                            <span class="field-flight-name main-color field--heading">Gulfstream G650</span>
+                                        </div>
+                                </div>
+                                <div class="flight-details">
+                                        <div class="icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                                <g clip-path="url(#clip0_9_1014)">
+                                                <path d="M10.6667 13.3334V2.66671C10.6667 2.31309 10.5262 1.97395 10.2761 1.7239C10.0261 1.47385 9.68695 1.33337 9.33333 1.33337H6.66666C6.31304 1.33337 5.9739 1.47385 5.72385 1.7239C5.4738 1.97395 5.33333 2.31309 5.33333 2.66671V13.3334" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M13.3333 4H2.66666C1.93028 4 1.33333 4.59695 1.33333 5.33333V12C1.33333 12.7364 1.93028 13.3333 2.66666 13.3333H13.3333C14.0697 13.3333 14.6667 12.7364 14.6667 12V5.33333C14.6667 4.59695 14.0697 4 13.3333 4Z" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </g>
+                                                <defs>
+                                                <clipPath id="clip0_9_1014">
+                                                <rect width="16" height="16" fill="white"/>
+                                                </clipPath>
+                                                </defs>
+                                            </svg>
+                                        </div>
+                                        <div class="field_details">
+                                            <span class="field-sub-heading">Luggage</span>
+                                            <span class="field-luggage-max main-color field--heading">2 bags</span>
+                                        </div>
+                                </div>
+                                <div class="flight-details">
+                                        <div class="icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                                <path d="M10.6667 14V12.6667C10.6667 11.9594 10.3857 11.2811 9.88563 10.781C9.38553 10.281 8.70725 10 8.00001 10H4.00001C3.29277 10 2.61449 10.281 2.11439 10.781C1.6143 11.2811 1.33334 11.9594 1.33334 12.6667V14" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M6.00001 7.33333C7.47277 7.33333 8.66668 6.13943 8.66668 4.66667C8.66668 3.19391 7.47277 2 6.00001 2C4.52725 2 3.33334 3.19391 3.33334 4.66667C3.33334 6.13943 4.52725 7.33333 6.00001 7.33333Z" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M14.6667 14V12.6667C14.6662 12.0758 14.4696 11.5019 14.1076 11.0349C13.7456 10.5679 13.2387 10.2344 12.6667 10.0867" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M10.6667 2.08667C11.2403 2.23354 11.7487 2.56714 12.1117 3.03488C12.4748 3.50262 12.6719 4.07789 12.6719 4.67C12.6719 5.26212 12.4748 5.83739 12.1117 6.30513C11.7487 6.77287 11.2403 7.10647 10.6667 7.25334" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </div>
+                                        <div class="field_details">
+                                            <span class="field-sub-heading">Available</span>
+                                            <span class="field-luggage-max main-color field--heading">3 seats</span>
+                                        </div>
+                                </div>
+                            </div>
+                            <div class="flight-note-wrapper">
+                                <h4 class="flight-note">Notes</h4>
+                                <p class="flight-note_text">Champagne & caviar service included</p>
+                            </div>
+                            <div class="card-btn-wrapper">
+                                <div class="card-btn-content">
+                                    <div class="price-wrapper">
+                                        <span class="price_heading">Price per seat</span>
+                                        <span class="price">€12,500</span>
+                                    </div>
+                                    <a href="#" class="btn-wrapper">
+                                        <span class="btn-icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                                <path d="M4.60002 12.0053C5.87241 12.658 7.33608 12.8348 8.72728 12.5038C10.1185 12.1729 11.3457 11.3559 12.1879 10.2001C13.03 9.04434 13.4316 7.62579 13.3204 6.2001C13.2092 4.7744 12.5924 3.4353 11.5812 2.42412C10.57 1.41293 9.23095 0.796155 7.80525 0.684932C6.37955 0.573708 4.961 0.975352 3.80523 1.81749C2.64947 2.65962 1.83248 3.88686 1.5015 5.27806C1.17052 6.66926 1.34732 8.13294 2.00002 9.40532L0.666687 13.3387L4.60002 12.0053Z" stroke="currentColor     " stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </span>
+                                        <span class="btn_text">Instant Inquiry</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Row 2 -->
+                    <div class="flight-card small"  data-type="jet-sharing">
+                        <div class="flight-card__image small">
+                            <img
+                            src="/assets/card_image.png"
+                            alt="Destination"
+                            />
+                            <div class="badge-wrapper">
+                                <span class="badge">3 seats left</span>
+                            </div>
+                        </div>
+                        <div class="flight-card__body">
+                            <h3 class="flight-title">
+                                <span class="travel_from">Mykonos</span>
+                                <span class="flight-icon"><svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
+                                    <path d="M2.33334 13.1667L9.16668 11.6667L12.0833 14.5834C13.3333 15.8334 15 16.25 15.8333 15.8334C16.25 15 15.8333 13.3334 14.5833 12.0834L11.6667 9.16671L13.1667 2.33337C13.25 1.91671 13.0833 1.58337 12.75 1.41671L12.3333 1.16671C11.9167 1.00004 11.5 1.08337 11.25 1.41671L8.33334 5.83337L5.83334 4.16671V1.66671L5.00001 0.833374L3.33334 3.33337L0.833344 5.00004L1.66668 5.83337H4.16668L5.83334 8.33337L1.41668 11.25C1.08334 11.5 1.00001 11.9167 1.16668 12.3334L1.33334 12.75C1.58334 13.0834 1.91668 13.25 2.33334 13.1667Z" stroke="currentColor" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg></span>
+                                <span class="travel_to">Cannes</span>
+                            </h3>
+                            <div class="flight-details-wrapper">
+                                <div class="flight-details">
+                                        <div class="icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                            <g clip-path="url(#clip0_9_993)">
+                                            <path d="M5.33333 1.33337V4.00004" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M10.6667 1.33337V4.00004" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M12.6667 2.66663H3.33333C2.59695 2.66663 2 3.26358 2 3.99996V13.3333C2 14.0697 2.59695 14.6666 3.33333 14.6666H12.6667C13.403 14.6666 14 14.0697 14 13.3333V3.99996C14 3.26358 13.403 2.66663 12.6667 2.66663Z" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M2 6.66663H14" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </g>
+                                            <defs>
+                                            <clipPath id="clip0_9_993">
+                                            <rect width="16" height="16" fill="white"/>
+                                            </clipPath>
+                                            </defs>
+                                            </svg>
+                                        </div>
+                                        <div class="field_details">
+                                            <span class="field-sub-heading">Date & Time</span>
+                                            <span class="field-date main-color field--heading">Feb 15, 2026</span>
+                                            <span class="field-time">10:00 AM</span>
+                                        </div>
+                                </div>
+                                <div class="flight-details">
+                                        <div class="icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                                <path d="M10.5333 11.5916L9.33332 6.12496L11.6667 3.79163C12.6667 2.79163 13 1.45829 12.6667 0.791626C12 0.458293 10.6667 0.791626 9.66666 1.79163L7.33332 4.12496L1.86666 2.92496C1.53332 2.85829 1.26666 2.99163 1.13332 3.25829L0.933323 3.59163C0.79999 3.92496 0.866657 4.25829 1.13332 4.45829L4.66666 6.79163L3.33332 8.79163H1.33332L0.666656 9.45829L2.66666 10.7916L3.99999 12.7916L4.66666 12.125V10.125L6.66666 8.79163L8.99999 12.325C9.19999 12.5916 9.53332 12.6583 9.86666 12.525L10.2 12.3916C10.4667 12.1916 10.6 11.925 10.5333 11.5916Z" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </div>
+                                        <div class="field_details">
+                                            <span class="field-sub-heading flight_type">Aircraft</span>
+                                            <span class="field-flight-name main-color field--heading">Gulfstream G650</span>
+                                        </div>
+                                </div>
+                                <div class="flight-details">
+                                        <div class="icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                                <g clip-path="url(#clip0_9_1014)">
+                                                <path d="M10.6667 13.3334V2.66671C10.6667 2.31309 10.5262 1.97395 10.2761 1.7239C10.0261 1.47385 9.68695 1.33337 9.33333 1.33337H6.66666C6.31304 1.33337 5.9739 1.47385 5.72385 1.7239C5.4738 1.97395 5.33333 2.31309 5.33333 2.66671V13.3334" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M13.3333 4H2.66666C1.93028 4 1.33333 4.59695 1.33333 5.33333V12C1.33333 12.7364 1.93028 13.3333 2.66666 13.3333H13.3333C14.0697 13.3333 14.6667 12.7364 14.6667 12V5.33333C14.6667 4.59695 14.0697 4 13.3333 4Z" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </g>
+                                                <defs>
+                                                <clipPath id="clip0_9_1014">
+                                                <rect width="16" height="16" fill="white"/>
+                                                </clipPath>
+                                                </defs>
+                                            </svg>
+                                        </div>
+                                        <div class="field_details">
+                                            <span class="field-sub-heading">Luggage</span>
+                                            <span class="field-luggage-max main-color field--heading">2 bags</span>
+                                        </div>
+                                </div>
+                                <div class="flight-details">
+                                        <div class="icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                                <path d="M10.6667 14V12.6667C10.6667 11.9594 10.3857 11.2811 9.88563 10.781C9.38553 10.281 8.70725 10 8.00001 10H4.00001C3.29277 10 2.61449 10.281 2.11439 10.781C1.6143 11.2811 1.33334 11.9594 1.33334 12.6667V14" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M6.00001 7.33333C7.47277 7.33333 8.66668 6.13943 8.66668 4.66667C8.66668 3.19391 7.47277 2 6.00001 2C4.52725 2 3.33334 3.19391 3.33334 4.66667C3.33334 6.13943 4.52725 7.33333 6.00001 7.33333Z" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M14.6667 14V12.6667C14.6662 12.0758 14.4696 11.5019 14.1076 11.0349C13.7456 10.5679 13.2387 10.2344 12.6667 10.0867" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M10.6667 2.08667C11.2403 2.23354 11.7487 2.56714 12.1117 3.03488C12.4748 3.50262 12.6719 4.07789 12.6719 4.67C12.6719 5.26212 12.4748 5.83739 12.1117 6.30513C11.7487 6.77287 11.2403 7.10647 10.6667 7.25334" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </div>
+                                        <div class="field_details">
+                                            <span class="field-sub-heading">Available</span>
+                                            <span class="field-luggage-max main-color field--heading">3 seats</span>
+                                        </div>
+                                </div>
+                            </div>
+                            <div class="flight-note-wrapper">
+                                <h4 class="flight-note">Notes</h4>
+                                <p class="flight-note_text">Champagne & caviar service included</p>
+                            </div>
+                            <div class="card-btn-wrapper">
+                                <div class="card-btn-content">
+                                    <div class="price-wrapper">
+                                        <span class="price_heading">Price per seat</span>
+                                        <span class="price">€13,500</span>
+                                    </div>
+                                    <a href="#" class="btn-wrapper">
+                                        <span class="btn-icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                                <path d="M4.60002 12.0053C5.87241 12.658 7.33608 12.8348 8.72728 12.5038C10.1185 12.1729 11.3457 11.3559 12.1879 10.2001C13.03 9.04434 13.4316 7.62579 13.3204 6.2001C13.2092 4.7744 12.5924 3.4353 11.5812 2.42412C10.57 1.41293 9.23095 0.796155 7.80525 0.684932C6.37955 0.573708 4.961 0.975352 3.80523 1.81749C2.64947 2.65962 1.83248 3.88686 1.5015 5.27806C1.17052 6.66926 1.34732 8.13294 2.00002 9.40532L0.666687 13.3387L4.60002 12.0053Z" stroke="currentColor     " stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </span>
+                                        <span class="btn_text">Instant Inquiry</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flight-card small"  data-type="jet-sharing">
+                        <div class="flight-card__image small">
+                            <img
+                            src="/assets/card_image.png"
+                            alt="Destination"
+                            />
+                            <div class="badge-wrapper">
+                                <span class="badge">3 seats left</span>
+                            </div>
+                        </div>
+                        <div class="flight-card__body">
+                            <h3 class="flight-title">
+                                <span class="travel_from">Cannes</span>
+                                <span class="flight-icon"><svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
+                                    <path d="M2.33334 13.1667L9.16668 11.6667L12.0833 14.5834C13.3333 15.8334 15 16.25 15.8333 15.8334C16.25 15 15.8333 13.3334 14.5833 12.0834L11.6667 9.16671L13.1667 2.33337C13.25 1.91671 13.0833 1.58337 12.75 1.41671L12.3333 1.16671C11.9167 1.00004 11.5 1.08337 11.25 1.41671L8.33334 5.83337L5.83334 4.16671V1.66671L5.00001 0.833374L3.33334 3.33337L0.833344 5.00004L1.66668 5.83337H4.16668L5.83334 8.33337L1.41668 11.25C1.08334 11.5 1.00001 11.9167 1.16668 12.3334L1.33334 12.75C1.58334 13.0834 1.91668 13.25 2.33334 13.1667Z" stroke="currentColor" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg></span>
+                                <span class="travel_to">Mykonos</span>
+                            </h3>
+                            <div class="flight-details-wrapper">
+                                <div class="flight-details">
+                                        <div class="icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                            <g clip-path="url(#clip0_9_993)">
+                                            <path d="M5.33333 1.33337V4.00004" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M10.6667 1.33337V4.00004" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M12.6667 2.66663H3.33333C2.59695 2.66663 2 3.26358 2 3.99996V13.3333C2 14.0697 2.59695 14.6666 3.33333 14.6666H12.6667C13.403 14.6666 14 14.0697 14 13.3333V3.99996C14 3.26358 13.403 2.66663 12.6667 2.66663Z" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M2 6.66663H14" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </g>
+                                            <defs>
+                                            <clipPath id="clip0_9_993">
+                                            <rect width="16" height="16" fill="white"/>
+                                            </clipPath>
+                                            </defs>
+                                            </svg>
+                                        </div>
+                                        <div class="field_details">
+                                            <span class="field-sub-heading">Date & Time</span>
+                                            <span class="field-date main-color field--heading">Feb 15, 2026</span>
+                                            <span class="field-time">10:00 AM</span>
+                                        </div>
+                                </div>
+                                <div class="flight-details">
+                                        <div class="icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                                <path d="M10.5333 11.5916L9.33332 6.12496L11.6667 3.79163C12.6667 2.79163 13 1.45829 12.6667 0.791626C12 0.458293 10.6667 0.791626 9.66666 1.79163L7.33332 4.12496L1.86666 2.92496C1.53332 2.85829 1.26666 2.99163 1.13332 3.25829L0.933323 3.59163C0.79999 3.92496 0.866657 4.25829 1.13332 4.45829L4.66666 6.79163L3.33332 8.79163H1.33332L0.666656 9.45829L2.66666 10.7916L3.99999 12.7916L4.66666 12.125V10.125L6.66666 8.79163L8.99999 12.325C9.19999 12.5916 9.53332 12.6583 9.86666 12.525L10.2 12.3916C10.4667 12.1916 10.6 11.925 10.5333 11.5916Z" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </div>
+                                        <div class="field_details">
+                                            <span class="field-sub-heading flight_type">Aircraft</span>
+                                            <span class="field-flight-name main-color field--heading">Gulfstream G650</span>
+                                        </div>
+                                </div>
+                                <div class="flight-details">
+                                        <div class="icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                                <g clip-path="url(#clip0_9_1014)">
+                                                <path d="M10.6667 13.3334V2.66671C10.6667 2.31309 10.5262 1.97395 10.2761 1.7239C10.0261 1.47385 9.68695 1.33337 9.33333 1.33337H6.66666C6.31304 1.33337 5.9739 1.47385 5.72385 1.7239C5.4738 1.97395 5.33333 2.31309 5.33333 2.66671V13.3334" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M13.3333 4H2.66666C1.93028 4 1.33333 4.59695 1.33333 5.33333V12C1.33333 12.7364 1.93028 13.3333 2.66666 13.3333H13.3333C14.0697 13.3333 14.6667 12.7364 14.6667 12V5.33333C14.6667 4.59695 14.0697 4 13.3333 4Z" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </g>
+                                                <defs>
+                                                <clipPath id="clip0_9_1014">
+                                                <rect width="16" height="16" fill="white"/>
+                                                </clipPath>
+                                                </defs>
+                                            </svg>
+                                        </div>
+                                        <div class="field_details">
+                                            <span class="field-sub-heading">Luggage</span>
+                                            <span class="field-luggage-max main-color field--heading">2 bags</span>
+                                        </div>
+                                </div>
+                                <div class="flight-details">
+                                        <div class="icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                                <path d="M10.6667 14V12.6667C10.6667 11.9594 10.3857 11.2811 9.88563 10.781C9.38553 10.281 8.70725 10 8.00001 10H4.00001C3.29277 10 2.61449 10.281 2.11439 10.781C1.6143 11.2811 1.33334 11.9594 1.33334 12.6667V14" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M6.00001 7.33333C7.47277 7.33333 8.66668 6.13943 8.66668 4.66667C8.66668 3.19391 7.47277 2 6.00001 2C4.52725 2 3.33334 3.19391 3.33334 4.66667C3.33334 6.13943 4.52725 7.33333 6.00001 7.33333Z" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M14.6667 14V12.6667C14.6662 12.0758 14.4696 11.5019 14.1076 11.0349C13.7456 10.5679 13.2387 10.2344 12.6667 10.0867" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M10.6667 2.08667C11.2403 2.23354 11.7487 2.56714 12.1117 3.03488C12.4748 3.50262 12.6719 4.07789 12.6719 4.67C12.6719 5.26212 12.4748 5.83739 12.1117 6.30513C11.7487 6.77287 11.2403 7.10647 10.6667 7.25334" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </div>
+                                        <div class="field_details">
+                                            <span class="field-sub-heading">Available</span>
+                                            <span class="field-luggage-max main-color field--heading">3 seats</span>
+                                        </div>
+                                </div>
+                            </div>
+                            <div class="flight-note-wrapper">
+                                <h4 class="flight-note">Notes</h4>
+                                <p class="flight-note_text">Champagne & caviar service included</p>
+                            </div>
+                            <div class="card-btn-wrapper">
+                                <div class="card-btn-content">
+                                    <div class="price-wrapper">
+                                        <span class="price_heading">Price per seat</span>
+                                        <span class="price">€12,500</span>
+                                    </div>
+                                    <a href="#" class="btn-wrapper">
+                                        <span class="btn-icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                                <path d="M4.60002 12.0053C5.87241 12.658 7.33608 12.8348 8.72728 12.5038C10.1185 12.1729 11.3457 11.3559 12.1879 10.2001C13.03 9.04434 13.4316 7.62579 13.3204 6.2001C13.2092 4.7744 12.5924 3.4353 11.5812 2.42412C10.57 1.41293 9.23095 0.796155 7.80525 0.684932C6.37955 0.573708 4.961 0.975352 3.80523 1.81749C2.64947 2.65962 1.83248 3.88686 1.5015 5.27806C1.17052 6.66926 1.34732 8.13294 2.00002 9.40532L0.666687 13.3387L4.60002 12.0053Z" stroke="currentColor     " stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </span>
+                                        <span class="btn_text">Instant Inquiry</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flight-card small"  data-type="jet-sharing">
+                        <div class="flight-card__image small">
+                            <img
+                            src="/assets/card_image.png"
+                            alt="Destination"
+                            />
+                            <div class="badge-wrapper">
+                                <span class="badge">3 seats left</span>
+                            </div>
+                        </div>
+                        <div class="flight-card__body">
+                            <h3 class="flight-title">
+                                <span class="travel_from">Mykonos</span>
+                                <span class="flight-icon"><svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
+                                    <path d="M2.33334 13.1667L9.16668 11.6667L12.0833 14.5834C13.3333 15.8334 15 16.25 15.8333 15.8334C16.25 15 15.8333 13.3334 14.5833 12.0834L11.6667 9.16671L13.1667 2.33337C13.25 1.91671 13.0833 1.58337 12.75 1.41671L12.3333 1.16671C11.9167 1.00004 11.5 1.08337 11.25 1.41671L8.33334 5.83337L5.83334 4.16671V1.66671L5.00001 0.833374L3.33334 3.33337L0.833344 5.00004L1.66668 5.83337H4.16668L5.83334 8.33337L1.41668 11.25C1.08334 11.5 1.00001 11.9167 1.16668 12.3334L1.33334 12.75C1.58334 13.0834 1.91668 13.25 2.33334 13.1667Z" stroke="currentColor" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg></span>
+                                <span class="travel_to">Cannes</span>
+                            </h3>
+                            <div class="flight-details-wrapper">
+                                <div class="flight-details">
+                                        <div class="icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                            <g clip-path="url(#clip0_9_993)">
+                                            <path d="M5.33333 1.33337V4.00004" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M10.6667 1.33337V4.00004" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M12.6667 2.66663H3.33333C2.59695 2.66663 2 3.26358 2 3.99996V13.3333C2 14.0697 2.59695 14.6666 3.33333 14.6666H12.6667C13.403 14.6666 14 14.0697 14 13.3333V3.99996C14 3.26358 13.403 2.66663 12.6667 2.66663Z" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M2 6.66663H14" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </g>
+                                            <defs>
+                                            <clipPath id="clip0_9_993">
+                                            <rect width="16" height="16" fill="white"/>
+                                            </clipPath>
+                                            </defs>
+                                            </svg>
+                                        </div>
+                                        <div class="field_details">
+                                            <span class="field-sub-heading">Date & Time</span>
+                                            <span class="field-date main-color field--heading">Feb 15, 2026</span>
+                                            <span class="field-time">10:00 AM</span>
+                                        </div>
+                                </div>
+                                <div class="flight-details">
+                                        <div class="icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                                <path d="M10.5333 11.5916L9.33332 6.12496L11.6667 3.79163C12.6667 2.79163 13 1.45829 12.6667 0.791626C12 0.458293 10.6667 0.791626 9.66666 1.79163L7.33332 4.12496L1.86666 2.92496C1.53332 2.85829 1.26666 2.99163 1.13332 3.25829L0.933323 3.59163C0.79999 3.92496 0.866657 4.25829 1.13332 4.45829L4.66666 6.79163L3.33332 8.79163H1.33332L0.666656 9.45829L2.66666 10.7916L3.99999 12.7916L4.66666 12.125V10.125L6.66666 8.79163L8.99999 12.325C9.19999 12.5916 9.53332 12.6583 9.86666 12.525L10.2 12.3916C10.4667 12.1916 10.6 11.925 10.5333 11.5916Z" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </div>
+                                        <div class="field_details">
+                                            <span class="field-sub-heading flight_type">Aircraft</span>
+                                            <span class="field-flight-name main-color field--heading">Gulfstream G650</span>
+                                        </div>
+                                </div>
+                                <div class="flight-details">
+                                        <div class="icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                                <g clip-path="url(#clip0_9_1014)">
+                                                <path d="M10.6667 13.3334V2.66671C10.6667 2.31309 10.5262 1.97395 10.2761 1.7239C10.0261 1.47385 9.68695 1.33337 9.33333 1.33337H6.66666C6.31304 1.33337 5.9739 1.47385 5.72385 1.7239C5.4738 1.97395 5.33333 2.31309 5.33333 2.66671V13.3334" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M13.3333 4H2.66666C1.93028 4 1.33333 4.59695 1.33333 5.33333V12C1.33333 12.7364 1.93028 13.3333 2.66666 13.3333H13.3333C14.0697 13.3333 14.6667 12.7364 14.6667 12V5.33333C14.6667 4.59695 14.0697 4 13.3333 4Z" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </g>
+                                                <defs>
+                                                <clipPath id="clip0_9_1014">
+                                                <rect width="16" height="16" fill="white"/>
+                                                </clipPath>
+                                                </defs>
+                                            </svg>
+                                        </div>
+                                        <div class="field_details">
+                                            <span class="field-sub-heading">Luggage</span>
+                                            <span class="field-luggage-max main-color field--heading">2 bags</span>
+                                        </div>
+                                </div>
+                                <div class="flight-details">
+                                        <div class="icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                                <path d="M10.6667 14V12.6667C10.6667 11.9594 10.3857 11.2811 9.88563 10.781C9.38553 10.281 8.70725 10 8.00001 10H4.00001C3.29277 10 2.61449 10.281 2.11439 10.781C1.6143 11.2811 1.33334 11.9594 1.33334 12.6667V14" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M6.00001 7.33333C7.47277 7.33333 8.66668 6.13943 8.66668 4.66667C8.66668 3.19391 7.47277 2 6.00001 2C4.52725 2 3.33334 3.19391 3.33334 4.66667C3.33334 6.13943 4.52725 7.33333 6.00001 7.33333Z" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M14.6667 14V12.6667C14.6662 12.0758 14.4696 11.5019 14.1076 11.0349C13.7456 10.5679 13.2387 10.2344 12.6667 10.0867" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M10.6667 2.08667C11.2403 2.23354 11.7487 2.56714 12.1117 3.03488C12.4748 3.50262 12.6719 4.07789 12.6719 4.67C12.6719 5.26212 12.4748 5.83739 12.1117 6.30513C11.7487 6.77287 11.2403 7.10647 10.6667 7.25334" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </div>
+                                        <div class="field_details">
+                                            <span class="field-sub-heading">Available</span>
+                                            <span class="field-luggage-max main-color field--heading">3 seats</span>
+                                        </div>
+                                </div>
+                            </div>
+                            <div class="flight-note-wrapper">
+                                <h4 class="flight-note">Notes</h4>
+                                <p class="flight-note_text">Champagne & caviar service included</p>
+                            </div>
+                            <div class="card-btn-wrapper">
+                                <div class="card-btn-content">
+                                    <div class="price-wrapper">
+                                        <span class="price_heading">Price per seat</span>
+                                        <span class="price">€13,500</span>
+                                    </div>
+                                    <a href="#" class="btn-wrapper">
+                                        <span class="btn-icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                                <path d="M4.60002 12.0053C5.87241 12.658 7.33608 12.8348 8.72728 12.5038C10.1185 12.1729 11.3457 11.3559 12.1879 10.2001C13.03 9.04434 13.4316 7.62579 13.3204 6.2001C13.2092 4.7744 12.5924 3.4353 11.5812 2.42412C10.57 1.41293 9.23095 0.796155 7.80525 0.684932C6.37955 0.573708 4.961 0.975352 3.80523 1.81749C2.64947 2.65962 1.83248 3.88686 1.5015 5.27806C1.17052 6.66926 1.34732 8.13294 2.00002 9.40532L0.666687 13.3387L4.60002 12.0053Z" stroke="currentColor     " stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </span>
+                                        <span class="btn_text">Instant Inquiry</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-logo">
+                    <img src="/assets/Airlein_footer_logo.png" alt="Airielle">
+                </div>
+                <p class="footer-content">The Sexy Way To Travel. Experience luxury private aviation with exclusive jet-share opportunities worldwide.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link facebook-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <g clip-path="url(#clip0_1_297)">
+                            <path d="M12 1.33325H10C9.11597 1.33325 8.26812 1.68444 7.643 2.30956C7.01788 2.93468 6.66669 3.78253 6.66669 4.66659V6.66659H4.66669V9.33325H6.66669V14.6666H9.33335V9.33325H11.3334L12 6.66659H9.33335V4.66659C9.33335 4.48977 9.40359 4.32021 9.52862 4.19518C9.65364 4.07016 9.82321 3.99992 10 3.99992H12V1.33325Z" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                            </g>
+                            <defs>
+                            <clipPath id="clip0_1_297">
+                            <rect width="16" height="16" fill="white"/>
+                            </clipPath>
+                            </defs>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-link instagram-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <g clip-path="url(#clip0_1_300)">
+                                <path d="M11.3333 1.33325H4.66665C2.8257 1.33325 1.33331 2.82564 1.33331 4.66659V11.3333C1.33331 13.1742 2.8257 14.6666 4.66665 14.6666H11.3333C13.1743 14.6666 14.6666 13.1742 14.6666 11.3333V4.66659C14.6666 2.82564 13.1743 1.33325 11.3333 1.33325Z" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M10.6667 7.57996C10.7489 8.13479 10.6542 8.70143 10.3958 9.1993C10.1375 9.69717 9.72877 10.1009 9.22776 10.3531C8.72675 10.6052 8.15897 10.693 7.6052 10.6039C7.05143 10.5148 6.53985 10.2533 6.14323 9.85673C5.74662 9.46012 5.48516 8.94854 5.39605 8.39477C5.30694 7.84099 5.39472 7.27322 5.64689 6.77221C5.89907 6.27119 6.3028 5.86245 6.80066 5.60412C7.29853 5.34579 7.86518 5.25102 8.42001 5.33329C8.98596 5.41721 9.50991 5.68093 9.91447 6.08549C10.319 6.49006 10.5828 7.01401 10.6667 7.57996Z" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M11.6667 4.33325H11.6734" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_1_300">
+                                    <rect width="16" height="16" fill="white"/>
+                                </clipPath>
+                            </defs>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-link twitter-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M14.6666 2.6666C14.6666 2.6666 14.2 4.0666 13.3333 4.93327C14.4 11.5999 7.06665 16.4666 1.33331 12.6666C2.79998 12.7333 4.26665 12.2666 5.33331 11.3333C1.99998 10.3333 0.333313 6.39993 1.99998 3.33327C3.46665 5.0666 5.73331 6.0666 7.99998 5.99993C7.39998 3.19993 10.6666 1.59993 12.6666 3.4666C13.4 3.4666 14.6666 2.6666 14.6666 2.6666Z" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-link linkedin-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <g clip-path="url(#clip0_1_308)">
+                                <path d="M10.6667 5.33325C11.7276 5.33325 12.745 5.75468 13.4951 6.50482C14.2453 7.25497 14.6667 8.27239 14.6667 9.33325V13.9999H12V9.33325C12 8.97963 11.8595 8.64049 11.6095 8.39044C11.3594 8.14039 11.0203 7.99992 10.6667 7.99992C10.3131 7.99992 9.97393 8.14039 9.72388 8.39044C9.47383 8.64049 9.33335 8.97963 9.33335 9.33325V13.9999H6.66669V9.33325C6.66669 8.27239 7.08811 7.25497 7.83826 6.50482C8.58841 5.75468 9.60582 5.33325 10.6667 5.33325Z" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M3.99998 6H1.33331V14H3.99998V6Z" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M2.66665 3.99992C3.40303 3.99992 3.99998 3.40297 3.99998 2.66659C3.99998 1.93021 3.40303 1.33325 2.66665 1.33325C1.93027 1.33325 1.33331 1.93021 1.33331 2.66659C1.33331 3.40297 1.93027 3.99992 2.66665 3.99992Z" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_1_308">
+                                    <rect width="16" height="16" fill="white"/>
+                                </clipPath>
+                            </defs>
+                        </svg>
+                    </a>
+                </div>
+                <div class="footer-links">
+                <a href="tel:+33123456789" class="footer-link contact-link">
+                    <span class="link-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none">
+                            <path d="M13.9254 10.6135V12.6135C13.9262 12.7991 13.8882 12.9829 13.8138 13.153C13.7394 13.3232 13.6303 13.4759 13.4935 13.6014C13.3567 13.7269 13.1951 13.8225 13.0193 13.882C12.8434 13.9414 12.657 13.9635 12.4721 13.9468C10.4207 13.7239 8.4501 13.0229 6.71876 11.9001C5.10798 10.8766 3.74232 9.51093 2.71877 7.90015C1.59208 6.16095 0.890927 4.18081 0.672098 2.12015C0.655438 1.93579 0.677348 1.74999 0.736432 1.57456C0.795515 1.39914 0.890479 1.23794 1.01528 1.10123C1.14007 0.964515 1.29197 0.855286 1.46129 0.780494C1.63062 0.705702 1.81366 0.666987 1.99877 0.666813H3.99877C4.3223 0.663628 4.63596 0.778198 4.88127 0.989168C5.12659 1.20014 5.28682 1.49311 5.3321 1.81348C5.41651 2.45352 5.57306 3.08196 5.79877 3.68681C5.88846 3.92543 5.90787 4.18476 5.8547 4.43407C5.80153 4.68338 5.67801 4.91222 5.49876 5.09348L4.6521 5.94015C5.60114 7.60918 6.98307 8.99111 8.6521 9.94015L9.49876 9.09348C9.68002 8.91424 9.90887 8.79071 10.1582 8.73754C10.4075 8.68437 10.6668 8.70378 10.9054 8.79348C11.5103 9.01918 12.1387 9.17573 12.7788 9.26015C13.1026 9.30583 13.3984 9.46895 13.6098 9.71848C13.8212 9.968 13.9335 10.2865 13.9254 10.6135Z" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </span>
+                    <span class="link-title">+33 1 23 45 67 89</span>
+                </a>
+                <a href="mailto:concierge@airielle.com" class="footer-link mail-link">
+                    <span class="link-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <g clip-path="url(#clip0_1_350)">
+                                <path d="M13.3333 2.66675H2.66665C1.93027 2.66675 1.33331 3.2637 1.33331 4.00008V12.0001C1.33331 12.7365 1.93027 13.3334 2.66665 13.3334H13.3333C14.0697 13.3334 14.6666 12.7365 14.6666 12.0001V4.00008C14.6666 3.2637 14.0697 2.66675 13.3333 2.66675Z" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M14.6666 4.66675L8.68665 8.46675C8.48083 8.5957 8.24286 8.66409 7.99998 8.66409C7.7571 8.66409 7.51913 8.5957 7.31331 8.46675L1.33331 4.66675" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_1_350">
+                                 <rect width="16" height="16" fill="white"/>
+                                </clipPath>
+                            </defs>
+                        </svg>
+                    </span>
+                    <span class="link-title">concierge@airielle.com</span>
+                </a>
+                <a href="https://maps.app.goo.gl/cRxemcG7FCNGij867" class="footer-link location-link">
+                    <span class="link-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <g clip-path="url(#clip0_1_356)">
+                                <path d="M13.3334 6.66659C13.3334 9.99525 9.64069 13.4619 8.40069 14.5326C8.28517 14.6194 8.14455 14.6664 8.00002 14.6664C7.85549 14.6664 7.71487 14.6194 7.59935 14.5326C6.35935 13.4619 2.66669 9.99525 2.66669 6.66659C2.66669 5.2521 3.22859 3.89554 4.22878 2.89535C5.22898 1.89516 6.58553 1.33325 8.00002 1.33325C9.41451 1.33325 10.7711 1.89516 11.7713 2.89535C12.7715 3.89554 13.3334 5.2521 13.3334 6.66659Z" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M8 8.66675C9.10457 8.66675 10 7.77132 10 6.66675C10 5.56218 9.10457 4.66675 8 4.66675C6.89543 4.66675 6 5.56218 6 6.66675C6 7.77132 6.89543 8.66675 8 8.66675Z" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_1_356">
+                                    <rect width="16" height="16" fill="white"/>
+                                </clipPath>
+                            </defs>
+                        </svg>
+                    </span>
+                    <span class="link-title">Monaco, Monte Carlo 98000 Monaco</span>
+                </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span class="copyright_text">© 2026 Airielle Inc. All rights reserved.</span>
+                <ul class="footer-store-link">
+                    <li class="footer-link-wrapper"><a href="#" class="link store_links">Privacy Policy</a></li>
+                    <li class="footer-link-wrapper"><a href="#" class="link store_links">Terms & Conditions</a></li>
+                    <li class="footer-link-wrapper"><a href="#" class="link store_links">Cookie Policy</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
