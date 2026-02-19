@@ -352,10 +352,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const message =
         `Instant Inquiry 🚀
-  Flight: ${from} → ${to}
-  Date: ${date}
-  Time: ${time}
-  Price: ${price}`;
+        Flight: ${from} → ${to}
+        Date: ${date}
+        Time: ${time}
+        Price: ${price}`;
 
       const phone = "9736456873"; // ← your number
       const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
@@ -364,4 +364,3 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
-
