@@ -1,15 +1,12 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-  // =========================
   // ELEMENTS
-  // =========================
   const form = document.getElementById("searchForm");
-
-  const nooftravels = document.getElementById("nooftravels");
-  const traveltype = document.getElementById("traveltype");
-  const fromCity = document.getElementById("fromCity");
-  const toCity = document.getElementById("toCity");
-  const departDate = document.getElementById("departDate");
+  const nooftravels = form.querySelector("#nooftravels");
+  const traveltype = form.querySelector("#traveltype");
+  const fromCity = form.querySelector("#fromCity");
+  const toCity = form.querySelector("#toCity");
+  const departDate = form.querySelector("#departDate")
 
   const searchResultSection = document.getElementById("searchResultSection");
   const resultBox = document.getElementById("filteredResults");
@@ -20,9 +17,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const allFields = [nooftravels, traveltype, fromCity, toCity, departDate];
 
-  // =========================
+  
   // LIVE ERROR CLEAR
-  // =========================
   allFields.forEach(el => {
     if (!el) return;
     el.addEventListener("change", () => clearFieldError(el));
@@ -41,9 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // =========================
   // DATE DEFAULT + MIN
-  // =========================
   if (departDate) {
     const today = new Date().toISOString().split("T")[0];
     departDate.min = today;
@@ -75,18 +69,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
   dateDisplay?.addEventListener("click", () => departDate.showPicker());
 
-  // =========================
   // SWAP FROM / TO
-  // =========================
   reverseIcon?.addEventListener("click", () => {
     const tmp = fromCity.value;
     fromCity.value = toCity.value;
     toCity.value = tmp;
   });
 
-  // =========================
   // RESULTS OPEN/CLOSE
-  // =========================
   function openResults() {
     searchResultSection.classList.add("visible");
     searchResultSection.style.height =
@@ -101,7 +91,6 @@ document.addEventListener("DOMContentLoaded", () => {
   function closeResults() {
     searchResultSection.style.height =
       searchResultSection.scrollHeight + "px";
-
     requestAnimationFrame(() => {
       searchResultSection.style.height = "0px";
     });
@@ -109,9 +98,7 @@ document.addEventListener("DOMContentLoaded", () => {
     searchResultSection.classList.remove("visible");
   }
 
-  // =========================
   // FORM SUBMIT
-  // =========================
   form.addEventListener("submit", (e) => {
     e.preventDefault();
     clearErrors();
@@ -137,23 +124,16 @@ document.addEventListener("DOMContentLoaded", () => {
     runFilter();
   });
 
-  // =========================
   // FILTER ENGINE
-  // =========================
   function runFilter() {
 
     const cards = document.querySelectorAll("#allFlightCards .flight-card");
     resultBox.innerHTML = "";
-
     const neededSeats = getMinTravelers(nooftravels.value);
-
     const fromText = fromCity.options[fromCity.selectedIndex].text.trim();
     const toText = toCity.options[toCity.selectedIndex].text.trim();
-
     let matches = 0;
-
     cards.forEach(card => {
-
       const cardFrom = card.querySelector(".travel_from")?.textContent.trim();
       const cardTo = card.querySelector(".travel_to")?.textContent.trim();
       const seatsText = card.querySelector(".badge")?.textContent;
@@ -190,10 +170,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // =========================
   // HELPERS
-  // =========================
-
+  
   function setError(inputEl, message) {
     const field = inputEl.closest(".field");
     const wrapper = inputEl.closest(".field-input");

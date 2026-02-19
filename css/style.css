@@ -3,6 +3,8 @@
   --main-bg-color: #ffffff;
   --banner-main-color: #282828;
   --bg-card: #ffffff;
+  --header-bg: #101828;
+  --text-white: #ffffff;
   --bg-footer: #101828;
   --color-footer: #99A1AF;
   --text-main: #0A0A0A;
@@ -24,6 +26,7 @@
   --form-box-shadow : 0px 20px 25px -5px #00000010;
   --form-button-shadow : 0px 10px 15px -3px #0000001A;
   --select-tag-bg: #F9FAFB;
+  --banner-heading-mobile: #101828;
 
   /* section box color */
   --section-bg-color: #F9FAFB;
@@ -83,7 +86,7 @@ img{
 }
 
 header {
-  border-bottom: 1px solid var(--border-soft);
+    background: var(--header-bg);
 }
 .nav-wrapper {
   display: flex;
@@ -242,7 +245,9 @@ nav {
 .field-input .icon {
   position: absolute;
   right: 15px;
-  padding-right: 5px;
+  padding-left: 5px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .field-input.open .icon {
@@ -291,6 +296,10 @@ nav {
   top: 50%;
   transform: translateY(-50%);
   pointer-events: none;
+}
+
+.updated-hero-banner .search-grid .field .field-input:has([type="tel"]) {
+  padding: 0;
 }
 
 
@@ -381,6 +390,246 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .btn-primary:hover {
   transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(255, 47, 146, 0.25);
+}
+
+/* Updated banner styling */
+.updated-hero-banner .hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.updated-hero-banner {
+  position: relative;
+}
+
+.updated-hero-banner .hero-content {
+  color: var(--text-white);
+  position: relative;
+  z-index: 2;
+  display: block;
+  width: 100%;
+  max-width: 1170px;
+  margin: 0 auto;
+  padding-block: 50px;
+}
+
+.updated-hero-banner  .hero-main-content {
+  display: block;
+  width: 100%;
+  max-width: 650px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.updated-hero-banner  .hero-title {
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 1.5;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+}
+
+.updated-hero-banner  .hero-sub {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.5;
+  letter-spacing: 0;
+}
+
+.updated-hero-banner .hero-sub .colored_text {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.updated-hero-banner  .banner_form {
+  margin-top: 50px;
+  display: block;
+  width: 100%;
+  border: 1px solid var(--border-soft);
+  padding: 50px;
+  border-radius: var(--radius-input);
+  overflow: hidden;
+  background: var(--bg-card);
+  color: #666666;
+  box-shadow: var(--form-box-shadow);
+}
+
+.updated-hero-banner .search-grid .field input:-webkit-autofill, .updated-hero-banner .search-grid .field-input:has([type="date"]) .date-show:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px var(--select-tag-bg) inset;
+  -webkit-text-fill-color:  #666666;;
+}
+
+.updated-hero-banner .search-grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.updated-hero-banner .search-grid .field {
+  width: 100%;
+  max-width: calc(25% - ( 15px * 3 / 4));
+  position: relative;
+  border-radius: var(--radius-input);
+}
+.updated-hero-banner .search-grid .field .field-input{
+  padding: 10px 16px;
+  background: var(--select-tag-bg);
+  border-color: transparent;
+  border-radius: var(--radius-input);
+  overflow: hidden;
+}
+
+.updated-hero-banner .search-grid .field:has(select) label {
+  display: none;
+}
+
+.updated-hero-banner .search-grid .field:has(select) {
+  background: transparent;
+  border: none;
+  padding: 0;
+  max-width: calc(16.3% - (15px *  3 /4 ));
+  color: #666666;
+}
+
+.updated-hero-banner .search-grid .field label:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+.updated-hero-banner .search-grid .field-input:has([type="date"]) .date-show {
+  pointer-events: none;
+}
+.updated-hero-banner .search-grid .field input,
+.updated-hero-banner .search-grid .field-input:has([type="date"]) .date-show {
+  border: unset;
+  background: transparent;
+  font-family: var(--body-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: normal;
+  letter-spacing: 0%;
+  color: #666666;
+  position: relative;
+  z-index: 2;
+}
+
+.updated-hero-banner .search-grid .field input:focus-visible {
+  outline: none;
+}
+
+.updated-hero-banner .search-grid .field input[type="date"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+}
+
+.updated-hero-banner .search-grid .field:has(select)  select {
+  padding: 18px 12px;
+  padding-right: 40px;
+  border: 1px solid currentColor;
+  border-radius: var(--radius-input);
+  color: #666666;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: normal;
+  letter-spacing: 0;
+  position: relative;
+}
+
+.updated-hero-banner .search-grid .field:has(select) .field-input {
+  border: unset;
+  padding: 0;
+}
+.updated-hero-banner .search-grid .field:has(select) .field-input--invalid.field-input select {
+  border: unset;
+}
+
+.updated-hero-banner .search-grid .field:has([type="tel"]) {
+  max-width: calc(33.5% - (15px * 3/4));
+  padding: 0;
+}
+
+.updated-hero-banner .search-grid .field-input:has([type="date"]) {
+  border: unset;
+  border-radius: unset;
+  font-size: unset;
+  padding: 10px 16px;
+  flex-direction: column;
+  align-items: flex-start;
+  border-radius: var(--radius-input);
+  overflow: hidden;
+}
+
+.updated-hero-banner .search-grid .field:has([type="tel"]) .phone-icon {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+
+.updated-hero-banner .search-grid .calander-icon {
+  position: absolute;
+  left: unset;
+  right: 18px;
+}
+
+.updated-hero-banner .search-grid .field:has([type="tel"]) label {
+  display: none;
+}
+
+.updated-hero-banner .search-grid .field:has([type="tel"]) input[type="tel"] {
+  padding: 18.5px;
+  padding-left: 46px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: normal;
+  letter-spacing: 1px;
+}
+
+.updated-hero-banner .submit-row {
+  display: block;
+  width: 100%;
+  max-width: calc((100% - 66.1%) - (15px * 3 / 4) );
+}
+
+.updated-hero-banner .search-grid .field label {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: normal;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.updated-hero-banner .search-grid .field:has([type="date"]) label {
+  text-transform: uppercase;
+}
+
+.updated-hero-banner button.btn {
+  display: block;
+  width: 100%;
+  padding: 16px;
+  border: unset;
+  background: var(--primary);
+  color: var(--text-white);
+  border-radius: var(--radius-input);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: -0.31px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.updated-hero-banner button.btn:hover {
   box-shadow: 0 6px 16px rgba(255, 47, 146, 0.25);
 }
 
@@ -683,7 +932,6 @@ color: var(--card-sub-color);
   box-shadow: 0 6px 16px rgb(37 211 102 / 31%);
 }
 
-/*  */
 .flight-details-wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -804,6 +1052,29 @@ footer .footer-content {
 .footer-bottom .link.store_links:hover {
   color: var(--footer-bottom-link-hover-color);
 }
+.tablet-shown{
+  display: none;
+}
+
+.search-result-cards-wrapper .flight_heading {
+  font-family: var(--heading-family);
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 100%;
+  letter-spacing: 0.07px;
+  margin-bottom: 24px;
+  text-transform: capitalize;
+  text-align: left;
+  padding: 0 16px;
+}
+
+.return_flights-wrapper {
+  margin-top: 40px;
+}
+
+.return_flights-wrapper:has(.hidden) {
+  display: none;
+}
 
 /* Responsive */
 
@@ -828,13 +1099,26 @@ footer .footer-content {
   padding-inline: 0;
 }
 
-.section-box{
+.section-box,
+.search-result-cards-wrapper .flight_heading{
   padding-inline: 0;
 }
+
 
 }
 
 @media screen and (max-width : 1024px){
+
+  .search-result-cards-wrapper .flight_heading{
+    padding-inline: 0;
+  }
+  .tablet-hidden{
+    display: none;
+  }
+  .tablet-shown{
+    display: block;
+  }
+
   .hero {
     grid-template-columns: 1fr;
     padding-block: 40px;
@@ -863,6 +1147,38 @@ footer .footer-content {
   .footer-top {
     padding-block: 40px;
   }
+
+  .updated-hero-banner .search-grid .field {
+    order: 3;
+    max-width: 100%;
+  }
+
+  .updated-hero-banner .search-grid .field:has(select) {
+    order: 0;
+    max-width: calc(50% - (20px * 1 /2));
+  }
+
+  .updated-hero-banner .search-grid {
+    column-gap: 20px;
+  }
+
+  .updated-hero-banner .search-grid .field:has([type="date"]) {
+    max-width: calc(50% - (20px * 1 /2));
+  }
+
+  .updated-hero-banner .search-grid .field:has([type="tel"]) {
+    max-width: 100%;
+  }
+
+  .updated-hero-banner .submit-row {
+    max-width: 100%;
+    order: 5;
+  }
+
+  .search-grid:has(.field.hidden .return-date) .field:has(.depart-date) {
+    max-width: 100%;
+  }
+
 }
 
 
@@ -875,7 +1191,10 @@ footer .footer-content {
     display: none;
   }
 
-
+  .search-result-cards-wrapper .flight_heading {
+    font-size: 24px;
+    margin-bottom: 22px;
+  }
   .nav-wrapper .logo {
     max-width: 152px;
   }
@@ -969,5 +1288,75 @@ footer .footer-content {
     display: block;
     width: 100%;
     text-align: center;
+  }
+
+  .updated-hero-banner .hero-content{
+    padding-block: 40px;
+  }
+
+  .updated-hero-banner .banner_form{
+    margin-top: 120px;
+    padding: 15px;
+  }
+  
+  .updated-hero-banner .container {
+      padding: 0 15px;
+  }
+  .updated-hero-banner .hero-title {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 1.5;
+    letter-spacing: 1px;
+    color: var(--text-main);
+  }
+
+  .updated-hero-banner .hero-sub {
+    font-size: 14px;
+    color: var(--banner-heading-mobile);
+  }
+
+  .updated-hero-banner .hero-main-content {
+    margin-bottom: 15px;
+  }
+
+  .updated-hero-banner .search-grid .field:has(select) select {
+    padding: 13px 13px;
+    font-size: 14px;
+  }
+
+  .field-input .icon {
+    right: 13px;
+  }
+
+  .updated-hero-banner .search-grid .field .field-input{
+    padding: 7.5px 16px;
+  }
+
+  .updated-hero-banner .search-grid .field label{
+    font-size: 10px;
+  }
+  
+  .updated-hero-banner .search-grid .field input,
+  .updated-hero-banner .search-grid .field-input:has([type="date"]) .date-show{
+    font-size: 12px;
+  }
+  
+  .updated-hero-banner .search-grid .calander-icon {
+    position: absolute;
+    left: unset;
+    right: 15px;
+  } 
+
+  .updated-hero-banner .search-grid .field:has([type="tel"]) input[type="tel"] {
+    padding: 11px 16px;
+    padding-left: 48px;
+    font-size: 12px;
+  }
+
+  .updated-hero-banner button.btn {
+    padding: 15px;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: -0.31px;
   }
 }
