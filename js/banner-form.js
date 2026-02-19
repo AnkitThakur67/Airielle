@@ -337,4 +337,30 @@ document.addEventListener("DOMContentLoaded", () => {
     runFilter();
   });
 
+
+  document.querySelectorAll(".btn-wrapper").forEach(btn => {
+    btn.addEventListener("click", function(e) {
+      e.preventDefault();
+
+      const card = btn.closest(".flight-card");
+
+      const from = card.querySelector(".travel_from").innerText;
+      const to = card.querySelector(".travel_to").innerText;
+      const date = card.querySelector(".field-date").innerText;
+      const time = card.querySelector(".flight-time").innerText;
+      const price = card.querySelector(".price").innerText;
+
+      const message =
+        `Instant Inquiry 🚀
+  Flight: ${from} → ${to}
+  Date: ${date}
+  Time: ${time}
+  Price: ${price}`;
+
+      const phone = "8278797106"; // ← your number
+      const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+
+      window.open(url, "_blank");
+    });
+  });
 });
