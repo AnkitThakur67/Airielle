@@ -357,7 +357,7 @@ document.addEventListener("DOMContentLoaded", () => {
         Time: ${time}
         Price: ${price}`;
 
-      const phone = "9736456873"; // ← your number
+      const phone = "9988074677"; // ← your number
       const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
 
       window.open(url, "_blank");
