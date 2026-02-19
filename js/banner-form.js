@@ -357,10 +357,11 @@ document.addEventListener("DOMContentLoaded", () => {
   Time: ${time}
   Price: ${price}`;
 
-      const phone = "8278797106"; // ← your number
+      const phone = "9736456873"; // ← your number
       const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
 
       window.open(url, "_blank");
     });
   });
 });
+
