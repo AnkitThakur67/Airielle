@@ -327,9 +327,26 @@ document.addEventListener("DOMContentLoaded", () => {
       error = true;
     }
 
-    if (!phone.value.trim()) {
+   const phoneVal = phone.value.trim();
+
+    // allow + digits spaces dashes only
+    const allowedPattern = /^\+?[0-9\s\-]+$/;
+
+    if (!phoneVal) {
       setError(phone, "Phone required");
       error = true;
+
+    } else if (!allowedPattern.test(phoneVal)) {
+      setError(phone, "Only numbers allowed");
+      error = true;
+
+    } else {
+      const digitsOnly = phoneVal.replace(/\D/g, '');
+
+      if (digitsOnly.length < 10) {
+        setError(phone, "Enter valid phone number");
+        error = true;
+      }
     }
 
     if (error) return;
