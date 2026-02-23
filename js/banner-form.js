@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const travelers = document.getElementById("travelers");
   const type = document.getElementById("type");
   const phone = document.getElementById("phone");
+  const terms = document.getElementById("terms");
 
   const departShow = document.querySelector(".depart-date");
   const returnShow = document.querySelector(".return-date");
@@ -20,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const returnField = returnDate.closest(".field");
 
-  const allFields = [from, to, depart, returnDate, travelers, type, phone];
+  const allFields = [from, to, depart, returnDate, travelers, type, phone, terms];
 
   /* =========================
      DATE SETUP
@@ -171,7 +172,7 @@ document.addEventListener("DOMContentLoaded", () => {
       typeValue: card.dataset.type || "",
 
       seats: extractSeats(
-        card.querySelector(".badge")?.textContent
+        card.querySelector(".field-availabe-seats")?.textContent
       ),
 
       cardDateISO: textDateToISO(
@@ -348,36 +349,40 @@ document.addEventListener("DOMContentLoaded", () => {
         error = true;
       }
     }
-
+    if (!terms.checked) {
+      setError(terms, "You must accept Terms & Conditions");
+      error = true;
+    }
     if (error) return;
 
     runFilter();
   });
 
 
-  document.querySelectorAll(".btn-wrapper").forEach(btn => {
-    btn.addEventListener("click", function(e) {
-      e.preventDefault();
+  document.addEventListener("click", function (e) {
+    const btn = e.target.closest(".btn-wrapper");
+    if (!btn) return;
 
-      const card = btn.closest(".flight-card");
+    e.preventDefault();
 
-      const from = card.querySelector(".travel_from").innerText;
-      const to = card.querySelector(".travel_to").innerText;
-      const date = card.querySelector(".field-date").innerText;
-      const time = card.querySelector(".flight-time").innerText;
-      const price = card.querySelector(".price").innerText;
+    const card = btn.closest(".flight-card");
 
-      const message =
-        `Instant Inquiry 🚀
-        Flight: ${from} → ${to}
-        Date: ${date}
-        Time: ${time}
-        Price: ${price}`;
+    const from = card.querySelector(".travel_from").innerText;
+    const to = card.querySelector(".travel_to").innerText;
+    const date = card.querySelector(".field-date").innerText;
+    const time = card.querySelector(".flight-time").innerText;
+    const price = card.querySelector(".price").innerText;
 
-      const phone = "9988074677"; // ← your number
-      const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+    const message =
+      `Instant Inquiry 🚀
+  Flight: ${from} → ${to}
+  Date: ${date}
+  Time: ${time}
+  Price: ${price}`;
 
-      window.open(url, "_blank");
-    });
+    const phone = "9988074677";
+    const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+
+    window.open(url, "_blank");
   });
 });

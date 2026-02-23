@@ -572,6 +572,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .updated-hero-banner .search-grid .field:has(select) .field-input {
   border: unset;
   padding: 0;
+  height: auto;
 }
 .updated-hero-banner .search-grid .field:has(select) .field-input--invalid.field-input select {
   border: unset;
@@ -638,10 +639,26 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   text-transform: uppercase;
 }
 
+.updated-hero-banner .search-grid .field.terms-wrapper {
+  margin-bottom: 5px;
+  text-transform: capitalize;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  max-width: 100%;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.updated-hero-banner .search-grid .field.terms-wrapper .error-message {
+  display: block;
+  width: 100%;
+}
+
 .updated-hero-banner button.btn {
   display: block;
   width: 100%;
-  padding: 16px;
+  padding: 10px 16px;
   border: unset;
   background: var(--primary);
   color: var(--text-white);
@@ -1206,6 +1223,10 @@ footer .footer-content {
 
   .search-grid:has(.field.hidden .return-date) .field:has(.depart-date) {
     max-width: 100%;
+  }
+
+  .updated-hero-banner .search-grid .field.terms-wrapper{
+    margin-bottom: 10px;
   }
 
 }
