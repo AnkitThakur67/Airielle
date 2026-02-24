@@ -828,6 +828,20 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   letter-spacing: -0.15px;
 }
 
+.flight-card__image .badge-wrapper .badge.discount_badge {
+  background: var(--primary);
+  color: var(--text-white);
+}
+
+.flight-card__image .badge-wrapper .badge.limited_badge {
+  background: var(--card-sec-btn-bg);
+  color: var(--text-white);
+}
+.flight-card__image .badge-wrapper .badge.empty_leg {
+  background: var(--banner-heading-mobile);
+  color: var(--text-white);
+}
+
 .flight-card__image img {
   width: 100%;
   object-fit: cover;
@@ -1410,3 +1424,4 @@ footer .footer-content {
     letter-spacing: -0.31px;
   }
 }
+
