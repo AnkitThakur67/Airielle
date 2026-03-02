@@ -46,8 +46,8 @@
         <section class="hero-wrapper updated-hero-banner">
 
             <div class="hero-bg">
-                <img src="assets/updated-banner-bg-image.png" alt="The sexy way to travel" class="tablet-hidden" loading="lazy">
-                <img src="assets/Updated-banner-image-tablet.png" alt="The sexy way to travel" class="tablet-shown" loading="lazy">
+                <img src="assets/updated-banner-bg-image.png" alt="The sexy way to travel" class="tablet-hidden" loading="lazy" fetchpriority="high" >
+                <img src="assets/Updated-banner-image-tablet.png" alt="The sexy way to travel" class="tablet-shown" loading="lazy" fetchpriority="high" >
             <div class="hero-overlay"></div>
             </div>
             <div class="container">
@@ -113,7 +113,6 @@
                             <!-- TRAVELERS -->
                             <div class="field">
                                 <div class="field-input">
-                                    <label for="travelers">Travelers</label>
                                     <select id="travelers">
                                         <option value="1" selected>1 traveler</option>
                                         <option value="2">2 travelers</option>
@@ -139,7 +138,6 @@
                             <!-- TRAVEL TYPE -->
                             <div class="field">
                                 <div class="field-input">
-                                    <label for="type">Travel Type</label>
                                     <select id="type">
                                         <option value="One way">One way</option>
                                         <option value="Two way" selected>Two way</option>
@@ -230,7 +228,7 @@
                 </div>
                 <p class="footer-content">The Sexy Way To Travel. Experience luxury private aviation with exclusive jet-share opportunities worldwide.</p>
                 <div class="social-links">
-                    <a href="/" class="social-link facebook-link">
+                    <a href="/" class="social-link facebook-link" aria-label="Visit our Facebook page">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                             <g clip-path="url(#clip0_1_297)">
                             <path d="M12 1.33325H10C9.11597 1.33325 8.26812 1.68444 7.643 2.30956C7.01788 2.93468 6.66669 3.78253 6.66669 4.66659V6.66659H4.66669V9.33325H6.66669V14.6666H9.33335V9.33325H11.3334L12 6.66659H9.33335V4.66659C9.33335 4.48977 9.40359 4.32021 9.52862 4.19518C9.65364 4.07016 9.82321 3.99992 10 3.99992H12V1.33325Z" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
@@ -242,7 +240,7 @@
                             </defs>
                         </svg>
                     </a>
-                    <a href="/" class="social-link instagram-link">
+                    <a href="/" class="social-link instagram-link" aria-label="Visit our Instagram page">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                             <g clip-path="url(#clip0_1_300)">
                                 <path d="M11.3333 1.33325H4.66665C2.8257 1.33325 1.33331 2.82564 1.33331 4.66659V11.3333C1.33331 13.1742 2.8257 14.6666 4.66665 14.6666H11.3333C13.1743 14.6666 14.6666 13.1742 14.6666 11.3333V4.66659C14.6666 2.82564 13.1743 1.33325 11.3333 1.33325Z" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
@@ -256,12 +254,12 @@
                             </defs>
                         </svg>
                     </a>
-                    <a href="/" class="social-link twitter-link">
+                    <a href="/" class="social-link twitter-link" aria-label="Visit our Twitter page">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                             <path d="M14.6666 2.6666C14.6666 2.6666 14.2 4.0666 13.3333 4.93327C14.4 11.5999 7.06665 16.4666 1.33331 12.6666C2.79998 12.7333 4.26665 12.2666 5.33331 11.3333C1.99998 10.3333 0.333313 6.39993 1.99998 3.33327C3.46665 5.0666 5.73331 6.0666 7.99998 5.99993C7.39998 3.19993 10.6666 1.59993 12.6666 3.4666C13.4 3.4666 14.6666 2.6666 14.6666 2.6666Z" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                     </a>
-                    <a href="/" class="social-link linkedin-link">
+                    <a href="/" class="social-link linkedin-link" aria-label="Visit our Linkedin page">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                             <g clip-path="url(#clip0_1_308)">
                                 <path d="M10.6667 5.33325C11.7276 5.33325 12.745 5.75468 13.4951 6.50482C14.2453 7.25497 14.6667 8.27239 14.6667 9.33325V13.9999H12V9.33325C12 8.97963 11.8595 8.64049 11.6095 8.39044C11.3594 8.14039 11.0203 7.99992 10.6667 7.99992C10.3131 7.99992 9.97393 8.14039 9.72388 8.39044C9.47383 8.64049 9.33335 8.97963 9.33335 9.33325V13.9999H6.66669V9.33325C6.66669 8.27239 7.08811 7.25497 7.83826 6.50482C8.58841 5.75468 9.60582 5.33325 10.6667 5.33325Z" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
@@ -301,7 +299,7 @@
                     </span>
                     <span class="link-title">concierge@airielle.com</span>
                 </a>
-                <a href="https://maps.app.goo.gl/cRxemcG7FCNGij867" class="footer-link location-link">
+                <a href="https://maps.app.goo.gl/cRxemcG7FCNGij867" class="footer-link location-link" alt="">
                     <span class="link-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                             <g clip-path="url(#clip0_1_356)">
