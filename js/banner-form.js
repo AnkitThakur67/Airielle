@@ -18,6 +18,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const searchResultSection = document.getElementById("searchResultSection");
   const resultBox = document.getElementById("filteredResults");
   const sectionTitle = document.querySelector(".search-result-title");
+  const departBoxwrapper = document.querySelector(".departure_flights-wrapper");
+  const returnBoxwrapper = document.querySelector(".return_flights-wrapper");
 
   const returnField = returnDate.closest(".field");
 
@@ -199,7 +201,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function runFilter() {
 
-    const cards = SOURCE_CARDS;
+    const cards = document.querySelectorAll("#allFlightCards .flight-card");;
     const departBox = document.querySelector(".departure_flights");
     const returnBox = document.querySelector(".return_flights");
 
@@ -214,6 +216,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const retDate = returnDate.value;
 
     const tripType = normalizeType(type.value);
+    
 
     let departMatches = 0;
     let returnMatches = 0;
@@ -225,8 +228,8 @@ document.addEventListener("DOMContentLoaded", () => {
       /* ========= OUTBOUND ========= */
 
       const outboundMatch =
-        data.fromText === searchFrom &&
-        data.toText === searchTo &&
+        data.fromText.includes(searchFrom) &&
+        data.toText.includes(searchTo) &&
         data.seats >= neededSeats &&
         isDateMatch(data.cardDateISO, departDate);
 
@@ -240,8 +243,8 @@ document.addEventListener("DOMContentLoaded", () => {
       if (tripType === "round") {
 
         const returnMatch =
-          data.fromText === searchTo &&
-          data.toText === searchFrom &&
+          data.fromText.includes(searchTo) &&
+          data.toText.includes(searchFrom) &&
           data.seats >= neededSeats &&
           isDateMatch(data.cardDateISO, retDate);
 
@@ -258,19 +261,23 @@ document.addEventListener("DOMContentLoaded", () => {
     returnBox.classList.toggle("hidden", tripType !== "round");
 
     const total = departMatches + returnMatches;
-
+    console.log(`${departMatches} + ${returnMatches}`);
+    if (departMatches === 0) {
+      departBoxwrapper.classList.add('hidden');
+    } else {
+      departBoxwrapper.classList.remove('hidden');
+    }
+    if (returnMatches === 0) {
+      returnBoxwrapper.classList.add('hidden');
+    } else {
+      returnBoxwrapper.classList.remove('hidden');
+    }
     sectionTitle.textContent =
       total === 0
         ? "No Results Found"
         : `Search Result (${total})`;
 
     openResults();
-    // console.log(`data.fromText is ${data.fromText} and the form searchFrom is ${searchFrom}`);
-    // console.log(`data.toText is ${data.toText} and the form searchTo is ${searchTo}`);
-    // console.log(`data.typeValue is ${data.typeValue} and the form searchType is ${searchType}`);
-    // console.log(`data.seats is ${data.seats} and the form neededSeats is ${neededSeats}`);
-    // console.log(`data.seats is ${data.seats} and the form neededSeats is ${neededSeats}`);
-    // console.log(`data is matched by ${isDateMatch(data.cardDateISO, retDate)}`);
   }
 
 

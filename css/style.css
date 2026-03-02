@@ -449,10 +449,19 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   text-align: center;
 }
 
+.updated-hero-banner .hero-main-content .sub_heading {
+  font-family: var(--heading-family);
+  font-weight: 400;
+  font-size: 30px;
+  line-height: normal;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+}
+
 .updated-hero-banner  .hero-title {
   font-weight: 400;
-  font-size: 50px;
-  line-height: 1.5;
+  font-size: 45px;
+  line-height: normal;
   letter-spacing: 1px;
   margin-bottom: 5px;
 }
@@ -660,7 +669,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   width: 100%;
   padding: 10px 16px;
   border: unset;
-  background: var(--primary);
+  background: var(--card-sec-btn-bg);
   color: var(--text-white);
   border-radius: var(--radius-input);
   font-weight: 400;
@@ -669,10 +678,11 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   letter-spacing: -0.31px;
   text-align: center;
   text-transform: uppercase;
+  transition: all .5s ease-in-out;
 }
 
 .updated-hero-banner button.btn:hover {
-  box-shadow: 0 6px 16px rgba(255, 47, 146, 0.25);
+  box-shadow: 0 6px 16px rgba(37, 211, 102, 25%);
 }
 
 /* Hero image card */
@@ -976,11 +986,19 @@ color: var(--card-sub-color);
   gap: 8px;
   text-decoration: none;
   color: var(--card-sec-btn-color);
-  background: #25d366;
+  background: var(--card-sec-btn-bg);
   padding: 12px 20px;
   border-radius: var(--radius-lg);
   box-shadow: var(--card-shadow);
   transition: all .5s ease-in-out;
+}
+
+.card-btn-wrapper .card-btn-content .btn-wrapper .btn-icon {
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 
 .card-btn-wrapper .card-btn-content .btn-wrapper:hover {
@@ -1364,13 +1382,17 @@ footer .footer-content {
   }
   
   .updated-hero-banner .container {
-      padding: 0 15px;
+    padding: 0 15px;
   }
+  
+  .updated-hero-banner .hero-main-content .sub_heading {
+    font-size: 16px;
+    line-height: normal;
+    color: var(--text-main);
+  }
+
   .updated-hero-banner .hero-title {
-    font-weight: 400;
     font-size: 24px;
-    line-height: 1.5;
-    letter-spacing: 1px;
     color: var(--text-main);
   }
 
