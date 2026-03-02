@@ -7,18 +7,20 @@
         alt="Destination"
         loading="lazy"
       />
-      <div class="badge-wrapper">
-          <span class="badge ${flight.badgetype}">${flight.badge}</span>
-      </div>
+      ${flight.badge ? `
+        <div class="badge-wrapper">
+            <span class="badge ${flight.badgetype}">${flight.badge}</span>
+        </div>
+        ` : ``}
   </div>
 
   <div class="flight-card__body">
       <h3 class="flight-title">
-          <span class="travel_from">${flight.from}</span>
-          <span class="flight-icon"><svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
-                                        <path d="M2.33334 13.1667L9.16668 11.6667L12.0833 14.5834C13.3333 15.8334 15 16.25 15.8333 15.8334C16.25 15 15.8333 13.3334 14.5833 12.0834L11.6667 9.16671L13.1667 2.33337C13.25 1.91671 13.0833 1.58337 12.75 1.41671L12.3333 1.16671C11.9167 1.00004 11.5 1.08337 11.25 1.41671L8.33334 5.83337L5.83334 4.16671V1.66671L5.00001 0.833374L3.33334 3.33337L0.833344 5.00004L1.66668 5.83337H4.16668L5.83334 8.33337L1.41668 11.25C1.08334 11.5 1.00001 11.9167 1.16668 12.3334L1.33334 12.75C1.58334 13.0834 1.91668 13.25 2.33334 13.1667Z" stroke="currentColor" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"></path>
-                                    </svg></span>
-          <span class="travel_to">${flight.to}</span>
+            <span class="travel_from">${flight.from}</span>
+            <span class="flight-icon"><svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
+                <path d="M2.33334 13.1667L9.16668 11.6667L12.0833 14.5834C13.3333 15.8334 15 16.25 15.8333 15.8334C16.25 15 15.8333 13.3334 14.5833 12.0834L11.6667 9.16671L13.1667 2.33337C13.25 1.91671 13.0833 1.58337 12.75 1.41671L12.3333 1.16671C11.9167 1.00004 11.5 1.08337 11.25 1.41671L8.33334 5.83337L5.83334 4.16671V1.66671L5.00001 0.833374L3.33334 3.33337L0.833344 5.00004L1.66668 5.83337H4.16668L5.83334 8.33337L1.41668 11.25C1.08334 11.5 1.00001 11.9167 1.16668 12.3334L1.33334 12.75C1.58334 13.0834 1.91668 13.25 2.33334 13.1667Z" stroke="currentColor" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg></span>
+            <span class="travel_to">${flight.to}</span>
       </h3>
 
       <div class="flight-details-wrapper">
@@ -148,7 +150,6 @@ document.addEventListener("DOMContentLoaded", () => {
       container.innerHTML = "";
       data.forEach(flight => {
         container.innerHTML += createFlightCard(flight);
-        console.log(flight.time)
       });
 
     })

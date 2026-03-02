@@ -23,7 +23,7 @@
         <div class="container">
             <div class="nav-wrapper">
                 <div class="logo">
-                    <a href="/index.html" title="Airielle - Flight Booking">
+                    <a href="/Airielle" title="Airielle - Flight Booking">
                         <img src="./assets/Airlein_footer_logo.png" alt="Airielle - Flight Booking" loading="lazy">
                     </a>
                 </div>
@@ -42,159 +42,6 @@
     </header>
 
     <main>
-      <!-- HERO SECTION -->
-      <section class="hero-wrapper hidden">
-        <div class="container">
-            <div class="hero">
-                <!-- Left: search card -->
-                <div class="hero-card">
-                    <form id="searchForm" novalidate>
-                        <h1 class="hero-title">The Sexy Way To Travel</h1>
-
-                        <div class="search-form">
-
-                            <!-- TOP OPTIONS -->
-                            <div class="field-wrapper">
-
-                            <!-- No. Of Traveler -->
-                            <div class="field">
-                                <label class="field-label" for="nooftravels">No. Of Traveler</label>
-                                <div class="field-input">
-                                    <select id="nooftravels" name="nooftravels">
-                                        <option value="">Select No. Of Traveler</option>
-                                        <option value="1-5">1–5 Travelers</option>
-                                        <option value="6-10">6–10 Travelers</option>
-                                        <option value="11-20">11–20 Travelers</option>
-                                        <option value="20+">20+ Travelers</option>
-                                    </select>
-                                    <span class="icon">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="10" viewBox="0 0 17 10" fill="none" style="">
-                                            <path d="M1 1L8.5 9L16 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                    </span>
-                                </div>
-                                <p class="error-message hidden"></p>
-                            </div>
-
-                            <!-- Travel Type -->
-                            <div class="field">
-                                <label class="field-label" for="traveltype">Travel Type</label>
-                                <div class="field-input">
-                                    <select id="traveltype" name="traveltype">
-                                        <option value="">Select Travel Type</option>
-                                        <option value="jet-sharing">Jet Sharing</option>
-                                        <option value="private-charter">Private Charter</option>
-                                        <option value="group-charter">Group Charter</option>
-                                        <option value="aircraft">Aircraft</option>
-                                    </select>
-                                    <span class="icon">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="10" viewBox="0 0 17 10" fill="none" style="">
-                                            <path d="M1 1L8.5 9L16 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                    </span>
-                                </div>
-                                <p class="error-message hidden"></p>
-                            </div>
-
-                            </div>
-
-                            <!-- Traveling From -->
-                            <div class="field">
-                            <label class="field-label" for="fromCity">Traveling From</label>
-                            <div class="field-input">
-                                <select id="fromCity" name="fromCity">
-                                <option value="">Select Origin</option>
-                                <option value="Sydney, Australia">Sydney, Australia</option>
-                                <option value="LAX">Los Angeles (LAX)</option>
-                                <option value="Brisbane, Australia">Brisbane, Australia</option>
-                                <option value="DXB">Dubai (DXB)</option>
-                                <option value="Cannes">Cannes</option>
-                                <option value="Mykonos">Mykonos</option>
-                                </select>
-                                <span class="icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="17" height="10" viewBox="0 0 17 10" fill="none" style="">
-                                        <path d="M1 1L8.5 9L16 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </span>
-                                <span class="aeroplane-icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
-                                        <path d="M17.1083 18.854L15.1289 9.83678L18.9777 5.98798C20.6272 4.3385 21.177 2.13919 20.6272 1.03953C19.5275 0.489701 17.3282 1.03953 15.6787 2.68901L11.8299 6.53781L2.81273 4.55843C2.2629 4.44846 1.82303 4.66839 1.6031 5.10826L1.27321 5.65809C1.05327 6.20791 1.16324 6.75774 1.6031 7.08764L7.43128 10.9364L5.23197 14.2354H1.933L0.833344 15.3351L4.13231 17.5344L6.33163 20.8333L7.43128 19.7337V16.4347L10.7303 14.2354L14.579 20.0636C14.9089 20.5034 15.4588 20.6134 16.0086 20.3935L16.5584 20.1735C16.9983 19.8437 17.2182 19.4038 17.1083 18.854Z" stroke="currentColor" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </span>
-                                <div class="reverse-icon hidden" title="Swap">⇄</div>
-                            </div>
-                            <p class="error-message hidden"></p>
-                            </div>
-
-                            <!-- Traveling To -->
-                            <div class="field">
-                            <label class="field-label" for="toCity">Traveling To</label>
-                            <div class="field-input">
-                                <select id="toCity" name="toCity">
-                                <option value="">Select Destination</option>
-                                <option value="LAX">Los Angeles (LAX)</option>
-                                <option value="Brisbane, Australia">Brisbane, Australia</option>
-                                <option value="LHR">London (LHR)</option>
-                                <option value="DXB">Dubai (DXB)</option>
-                                <option value="Cannes">Cannes</option>
-                                <option value="Mykonos">Mykonos</option>
-                                </select>
-                                <span class="icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="17" height="10" viewBox="0 0 17 10" fill="none" style="">
-                                        <path d="M1 1L8.5 9L16 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </span>
-                                <span class="aeroplane-icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
-                                        <path d="M17.1083 18.854L15.1289 9.83678L18.9777 5.98798C20.6272 4.3385 21.177 2.13919 20.6272 1.03953C19.5275 0.489701 17.3282 1.03953 15.6787 2.68901L11.8299 6.53781L2.81273 4.55843C2.2629 4.44846 1.82303 4.66839 1.6031 5.10826L1.27321 5.65809C1.05327 6.20791 1.16324 6.75774 1.6031 7.08764L7.43128 10.9364L5.23197 14.2354H1.933L0.833344 15.3351L4.13231 17.5344L6.33163 20.8333L7.43128 19.7337V16.4347L10.7303 14.2354L14.579 20.0636C14.9089 20.5034 15.4588 20.6134 16.0086 20.3935L16.5584 20.1735C16.9983 19.8437 17.2182 19.4038 17.1083 18.854Z" stroke="currentColor" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </span>
-                            </div>
-                            <p class="error-message hidden"></p>
-                            </div>
-
-
-                            <!-- Departure -->
-                            <div class="field">
-                            <label class="field-label hidden" for="departDate">Departure</label>
-                            <div class="field-input">
-                                <input id="departDate" name="departDate" type="date" />
-                                <span class="calander-icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="21" height="23" viewBox="0 0 21 23" fill="none">
-                                        <path d="M14.3145 0C14.7746 0.000122163 15.1475 0.372846 15.1475 0.833008V2.07422H17.4248C19.0305 2.07422 20.332 3.37577 20.332 4.98145V10.3457C20.6899 10.439 20.9539 10.7632 20.9541 11.1504C20.9541 11.5377 20.69 11.8617 20.332 11.9551V19.499C20.3319 21.1046 19.0304 22.4062 17.4248 22.4062H2.90723C1.30177 22.4061 0.000173126 21.1045 0 19.499V4.98145C0 3.37585 1.30166 2.07434 2.90723 2.07422H5.18555V0.833008C5.18555 0.372771 5.55832 0 6.01855 0C6.47865 0.000172096 6.85156 0.372877 6.85156 0.833008V2.07422H13.4814V0.833008C13.4814 0.372771 13.8542 0 14.3145 0ZM1.66602 11.9834V19.499C1.66619 20.184 2.22224 20.7401 2.90723 20.7402H17.4248C18.1099 20.7402 18.6658 20.1841 18.666 19.499V11.9834H1.66602ZM2.90723 3.74023C2.22213 3.74036 1.66602 4.29632 1.66602 4.98145V10.3174H18.666V4.98145C18.666 4.29625 18.11 3.74023 17.4248 3.74023H15.1475V4.98145C15.1472 5.44136 14.7744 5.81433 14.3145 5.81445C13.8544 5.81445 13.4817 5.44143 13.4814 4.98145V3.74023H6.85156V4.98145C6.85127 5.44133 6.47847 5.81428 6.01855 5.81445C5.5585 5.81445 5.18584 5.44143 5.18555 4.98145V3.74023H2.90723Z" fill="currentColor"/>
-                                    </svg>
-                                </span>
-                                <span class="date-display" id="dateDisplay"></span>
-                            </div>
-                            <p class="error-message hidden"></p>
-                            </div>
-
-                        </div>
-
-                        <div class="search-footer">
-                            <button class="btn-primary" type="submit">Search Flights</button>
-                        </div>
-                    </form>
-                </div>
-                <!-- Right: hero image -->
-                <div class="hero-image-card">
-                    <div class="hero-image-inner mobile-hidden">
-                        <img
-                        src="assets/Container.png"
-                        alt="Airplane over ocean"
-                        />
-                    </div>
-                    <div class="hero-image-inner desktop-hidden">
-                        <img
-                        src="assets/mobile_banner_image.png"
-                        alt="Airplane over ocean"
-                        />
-                    </div>
-                </div>
-            </div>
-        </div>  
-      </section>
-
         <!-- Updated hero banner -->
         <section class="hero-wrapper updated-hero-banner">
 
@@ -477,7 +324,7 @@
                 <ul class="footer-store-link">
                     <li class="footer-link-wrapper"><a href="/" class="link store_links">Privacy Policy</a></li>
                     <li class="footer-link-wrapper"><a href="/" class="link store_links">Terms & Conditions</a></li>
-                    <li class="footer-link-wrapper"><a href="./backend_data/admin.html" class="link store_links">Cookie Policy</a></li>
+                    <li class="footer-link-wrapper"><a href="/" class="link store_links">Cookie Policy</a></li>
                 </ul>
             </div>
         </div>
