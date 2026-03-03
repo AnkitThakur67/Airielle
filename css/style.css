@@ -407,10 +407,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   letter-spacing: 0;
 }
 
-.updated-hero-banner .hero-sub .colored_text {
-  color: currentColor;
-  font-weight: 600;
-}
+
 
 .updated-hero-banner  .banner_form {
   margin-top: 50px;
@@ -599,11 +596,11 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .updated-hero-banner button.btn {
-  display: block;
+  display: flex;
   width: 100%;
   padding: 10px 16px;
   border: unset;
-  background: var(--card-sec-btn-bg);
+  background: var(--primary);
   color: var(--text-white);
   border-radius: var(--radius-input);
   font-weight: 400;
@@ -613,10 +610,27 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   text-align: center;
   text-transform: uppercase;
   transition: all .5s ease-in-out;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
 .updated-hero-banner button.btn:hover {
-  box-shadow: 0 6px 16px rgba(37, 211, 102, 25%);
+  box-shadow: 0 6px 16px rgba(255, 47, 146, 0.25);
+}
+
+.updated-hero-banner button.btn .btn-icon{
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.updated-hero-banner button.btn .btn-icon svg{
+  width: 18px;
+  height: 18px;
 }
 
 /* Hero image card */
@@ -1121,10 +1135,6 @@ footer .footer-content {
 
 @media screen and (max-width : 1024px){
 
-  .updated-hero-banner .hero-sub .colored_text {
-    color: currentColor;
-    font-weight: normal;
-  }
   .search-result-cards-wrapper .flight_heading{
     padding-inline: 0;
   }
@@ -1379,9 +1389,5 @@ footer .footer-content {
 
   .updated-hero-banner button.btn {
     padding: 15px;
-    font-size: 18px;
-    line-height: 24px;
-    letter-spacing: -0.31px;
   }
 }
-
