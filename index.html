@@ -14,7 +14,7 @@
     <!-- Style sheets -->
     <link rel="stylesheet" href="css/style.css"/>
     <!-- Functionallity -->
-    <script src="js/banner-form.js" defer></script>
+    <script src="js/inquery.js" defer></script>
     <!-- data-fetch -->
      <script src="backend_data/data.js"></script>
 </head>
@@ -44,24 +44,21 @@
     <main>
         <!-- Updated hero banner -->
         <section class="hero-wrapper updated-hero-banner">
-
             <div class="hero-bg">
-                <img src="assets/updated-banner-bg-image.png" alt="The sexy way to travel" class="tablet-hidden" loading="lazy" fetchpriority="high" >
-                <img src="assets/Updated-banner-image-tablet.png" alt="The sexy way to travel" class="tablet-shown" loading="lazy" fetchpriority="high" >
+                <img src="assets/Updated_jet_image.png" alt="The sexy way to travel" class="tablet-hidden" loading="lazy" fetchpriority="high" >
+                <img src="assets/Updated_jet_mobile_image.png" alt="The sexy way to travel" class="tablet-shown" loading="lazy" fetchpriority="high" >
             <div class="hero-overlay"></div>
             </div>
             <div class="container">
                 <div class="hero-content">
                     <div class="hero-main-content mobile-hidden">
                         <h1 class="hero-title">Share a jet from 300€</h1>
-                        <p class="sub_heading">The sexiest way to travel</p>
-                            <p class="hero-sub">Avoid airport lines and fly private. Search for a seat or an entire jet. Instant quotes.</p>
-                        </div>
-                        <div class="banner_form">
+                        <p class="hero-sub">Avoid airport queues and explore private flying options. Inquire about available seats or full jets through our licensed partners.</p>
+                    </div>
+                    <div class="banner_form">
                             <div class="hero-main-content desktop-hidden">
                                 <h1 class="hero-title">Share a jet from 300€</h1>
-                                <p class="hero-sub">The sexiest way to travel</p>
-                                <p class="hero-sub">Avoid airport lines and fly private. Search for a seat or an entire jet. Instant quotes.</p>
+                                <p class="hero-sub">Avoid airport queues and explore private flying options. Inquire about available seats or full jets through our licensed partners.</p>
                             </div>
                         <form id="flightForm">
                             <div class="search-grid">
@@ -179,9 +176,76 @@
                             </div>
                             </div>
                         </form>
+                        <div class="button_wrapper charter_wrapper">
+                            <h3 class="charter_text">I am a charter company or jet owner</h3>
+                            <a href="https://wa.me/9988074677" class="charter_btn" title="Contact us if you are a charter company or jet owner">Connnect</a>
+                        </div>
                     </div>
                 </div>
             </div>  
+        </section>
+
+        <section class="faq-section">
+        <div class="container">
+            <h2 class="faq-title">Frequently Asked Questions</h2>
+
+            <div class="faq">
+
+            <div class="faq-item active">
+                <button class="faq-question">
+                How can I book a flight?
+                <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                <p>
+                    You can book your flight by selecting your departure and destination,
+                    choosing your preferred flight, and completing the booking process
+                    through our secure payment system.
+                </p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                Can I change or cancel my booking?
+                <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                <p>
+                    Yes, you can modify or cancel your booking from the "My Trips"
+                    section. Terms may vary depending on the fare rules of your ticket.
+                </p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                What payment methods do you accept?
+                <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                <p>
+                    We accept major credit cards, debit cards, and secure online
+                    payment options to make your booking quick and easy.
+                </p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                When will I receive my e-ticket?
+                <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                <p>
+                    After completing the booking process, your e-ticket will be sent
+                    instantly to your registered email address.
+                </p>
+                </div>
+            </div>
+
+            </div>
+        </div>
         </section>
 
         <!-- SEARCH RESULT SECTION (red box in your screenshot) -->
