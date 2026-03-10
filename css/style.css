@@ -1422,6 +1422,10 @@ footer .footer-content {
     max-width: 203px;
   }
 
+  .footer-bottom .footer-store-link{
+    justify-content: center;
+  }
+
   .footer-bottom {
     justify-content: center;
     gap: 20px;
