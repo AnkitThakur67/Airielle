@@ -1187,6 +1187,7 @@ footer .footer-content {
   line-height: 28px;
   letter-spacing: -0.45px;
   text-align: left;
+  color:#0d99ff;
 }
 
 .faq-icon {
@@ -1321,6 +1322,14 @@ footer .footer-content {
 
   .updated-hero-banner .search-grid .field.terms-wrapper{
     margin-bottom: 10px;
+  }
+
+  .faq-title{
+    text-align: left;
+  }
+
+  .button_wrapper.charter_wrapper {
+    align-items: flex-start;
   }
 
 }
