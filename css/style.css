@@ -1330,6 +1330,7 @@ footer .footer-content {
 
   .button_wrapper.charter_wrapper {
     align-items: flex-start;
+    flex-direction: row;
   }
 
 }
