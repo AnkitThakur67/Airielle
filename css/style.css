@@ -637,9 +637,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   margin-top: 20px;
   display: inline-flex;
   width: 100%;
-  flex-direction: column;
-  align-items: flex-end;
+  flex-direction: row;
+  align-items: center;
   gap: 15px;
+  justify-content: flex-end;
 }
 
 .charter_text {
@@ -1187,7 +1188,7 @@ footer .footer-content {
   line-height: 28px;
   letter-spacing: -0.45px;
   text-align: left;
-  color:#0d99ff;
+  color:var(--primary);
 }
 
 .faq-icon {
@@ -1329,8 +1330,8 @@ footer .footer-content {
   }
 
   .button_wrapper.charter_wrapper {
-    align-items: flex-start;
-    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
   }
 
 }
